@@ -306,7 +306,7 @@ final class StudyStore: ObservableObject {
         let week = currentWeek
         let roadmap = PlanFactory.roadmap(for: profile?.plan ?? .standard8)
         let weekGoal = roadmap.first { $0.week == week } ?? roadmap.first
-        let focusDomain = weekGoal?.domains.first ??? .overview
+        let focusDomain = weekGoal?.domains.first ?? .overview
 
         // 1) 今週テーマのレッスン
         if let lesson = repo.lessons(in: focusDomain).first {

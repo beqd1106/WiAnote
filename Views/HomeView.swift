@@ -317,8 +317,8 @@ struct HomeView: View {
     private func route(for task: TodayTask) -> HomeRoute {
         switch task.kind {
         case .lesson: return .lesson(task.refId ?? "")
-        case .terms:  return .terms(ExamDomain(rawValue: task.refId ?? "") ??? .overview)
-        case .quiz:   return .quiz(ExamDomain(rawValue: task.refId ?? "") ??? .overview)
+        case .terms:  return .terms(ExamDomain(rawValue: task.refId ?? "") ?? .overview)
+        case .quiz:   return .quiz(ExamDomain(rawValue: task.refId ?? "") ?? .overview)
         case .review: return .review
         }
     }

@@ -136,7 +136,7 @@ final class AnswerRecord {
         self.isMockExam = isMockExam
     }
 
-    var domain: ExamDomain { ExamDomain(rawValue: domainRaw) ??? .overview }
+    var domain: ExamDomain { ExamDomain(rawValue: domainRaw) ?? .overview }
 }
 
 // MARK: - 復習アイテム（間隔反復）
@@ -183,7 +183,7 @@ struct DomainScoreEntry: Codable, Hashable {
     var domainRaw: String
     var correct: Int
     var total: Int
-    var domain: ExamDomain { ExamDomain(rawValue: domainRaw) ??? .overview }
+    var domain: ExamDomain { ExamDomain(rawValue: domainRaw) ?? .overview }
     var rate: Double { total == 0 ? 0 : Double(correct) / Double(total) }
 }
 
