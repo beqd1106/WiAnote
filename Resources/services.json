@@ -1,0 +1,156 @@
+[
+ {
+  "id": "s-rpa",
+  "name": "RPA",
+  "category": "概要",
+  "oneLiner": "定型的なPC操作をソフトのロボットに代行させる自動化の仕組み。",
+  "domain": "overview"
+ },
+ {
+  "id": "s-winactor",
+  "name": "WinActor",
+  "category": "概要",
+  "oneLiner": "NTTデータ製の純国産RPAツール。日本語で操作を記録・編集できる。",
+  "domain": "overview"
+ },
+ {
+  "id": "s-windirector",
+  "name": "WinDirector",
+  "category": "概要",
+  "oneLiner": "複数のWinActorロボットを一元管理・実行制御する上位製品。",
+  "domain": "overview"
+ },
+ {
+  "id": "s-full",
+  "name": "フル機能版",
+  "category": "エディション",
+  "oneLiner": "作成・編集・実行のすべてが行える開発用エディション。",
+  "domain": "overview"
+ },
+ {
+  "id": "s-runtime",
+  "name": "実行版",
+  "category": "エディション",
+  "oneLiner": "作成済みシナリオの実行に特化。記録・編集・部分実行は不可。",
+  "domain": "overview"
+ },
+ {
+  "id": "s-nodelock",
+  "name": "ノードロックライセンス",
+  "category": "ライセンス",
+  "oneLiner": "インストールした特定端末でのみ利用できる方式。",
+  "domain": "overview"
+ },
+ {
+  "id": "s-floating",
+  "name": "フローティングライセンス",
+  "category": "ライセンス",
+  "oneLiner": "同時利用数の範囲で複数端末が使い回せる方式。",
+  "domain": "overview"
+ },
+ {
+  "id": "s-node",
+  "name": "ノード",
+  "category": "部品",
+  "oneLiner": "分岐・繰り返し・待機などシナリオの骨組みとなる基本部品。",
+  "domain": "overview"
+ },
+ {
+  "id": "s-library",
+  "name": "ライブラリ",
+  "category": "部品",
+  "oneLiner": "Excel操作や文字列処理など細かな操作をまとめた部品。",
+  "domain": "features"
+ },
+ {
+  "id": "s-autorecord",
+  "name": "自動記録",
+  "category": "記録方式",
+  "oneLiner": "部品を内部情報で識別して操作を記録。安定して動く基本方式。",
+  "domain": "features"
+ },
+ {
+  "id": "s-imagematch",
+  "name": "画像マッチング",
+  "category": "記録方式",
+  "oneLiner": "記録した画像と画面を照合して操作。画面変化に弱い。",
+  "domain": "features"
+ },
+ {
+  "id": "s-emulation",
+  "name": "エミュレーション",
+  "category": "記録方式",
+  "oneLiner": "キー・マウス操作そのものを記録。座標依存でずれやすい。",
+  "domain": "features"
+ },
+ {
+  "id": "s-branch",
+  "name": "分岐",
+  "category": "ノード",
+  "oneLiner": "条件の成否で処理の流れを2方向に分けるノード。",
+  "domain": "features"
+ },
+ {
+  "id": "s-loop",
+  "name": "繰り返し",
+  "category": "ノード",
+  "oneLiner": "回数や条件が満たされる間、同じ処理を反復するノード。",
+  "domain": "features"
+ },
+ {
+  "id": "s-wait",
+  "name": "待機",
+  "category": "ノード",
+  "oneLiner": "画面表示や処理完了を待って処理を止める。安定動作の要。",
+  "domain": "features"
+ },
+ {
+  "id": "s-setvar",
+  "name": "変数値設定",
+  "category": "ノード",
+  "oneLiner": "変数に値を代入・更新するノード。",
+  "domain": "features"
+ },
+ {
+  "id": "s-variable",
+  "name": "変数",
+  "category": "データ",
+  "oneLiner": "値を一時的にしまう箱。ノード間で値を受け渡す。",
+  "domain": "features"
+ },
+ {
+  "id": "s-datalist",
+  "name": "データ一覧",
+  "category": "データ",
+  "oneLiner": "CSV等の表を取り込み1行ずつ処理するための表。",
+  "domain": "features"
+ },
+ {
+  "id": "s-scenario",
+  "name": "シナリオ",
+  "category": "シナリオ",
+  "oneLiner": "自動化の手順をフローチャートでまとめたもの。",
+  "domain": "scenario"
+ },
+ {
+  "id": "s-stepexec",
+  "name": "ステップ実行",
+  "category": "実行",
+  "oneLiner": "1ノードずつ動かして動作や変数を確認する実行方法。",
+  "domain": "scenario"
+ },
+ {
+  "id": "s-exception",
+  "name": "例外処理",
+  "category": "シナリオ",
+  "oneLiner": "エラー時も止めず、決めた対応へ流す仕組み。",
+  "domain": "scenario"
+ },
+ {
+  "id": "s-subscenario",
+  "name": "サブシナリオ",
+  "category": "シナリオ",
+  "oneLiner": "一連の手順を部品化し呼び出して再利用する仕組み。",
+  "domain": "scenario"
+ }
+]
