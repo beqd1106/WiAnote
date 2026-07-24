@@ -31,7 +31,10 @@
    "q-ov-021",
    "q-ov-022",
    "q-ov-023",
-   "q-ov-024"
+   "q-ov-024",
+   "q-ov-033",
+   "q-ov-034",
+   "q-ov-035"
   ],
   "challengeQuizIds": null,
   "drillQuizIds": [
@@ -72,7 +75,9 @@
    "q-ov-025",
    "q-ov-026",
    "q-ov-027",
-   "q-ov-032"
+   "q-ov-032",
+   "q-ov-036",
+   "q-ov-037"
   ],
   "challengeQuizIds": null,
   "drillQuizIds": [
@@ -113,7 +118,10 @@
    "q-ov-028",
    "q-ov-029",
    "q-ov-030",
-   "q-ov-031"
+   "q-ov-031",
+   "q-ov-038",
+   "q-ov-039",
+   "q-ov-040"
   ],
   "challengeQuizIds": null,
   "drillQuizIds": [
@@ -160,7 +168,14 @@
    "q-ft-035",
    "q-ft-036",
    "q-ft-037",
-   "q-ft-038"
+   "q-ft-038",
+   "q-ft-061",
+   "q-ft-062",
+   "q-ft-063",
+   "q-ft-064",
+   "q-ft-065",
+   "q-ft-087",
+   "q-ft-090"
   ],
   "challengeQuizIds": null,
   "drillQuizIds": [
@@ -211,7 +226,17 @@
    "q-ft-045",
    "q-ft-046",
    "q-ft-057",
-   "q-ft-058"
+   "q-ft-058",
+   "q-ft-066",
+   "q-ft-067",
+   "q-ft-068",
+   "q-ft-069",
+   "q-ft-070",
+   "q-ft-071",
+   "q-ft-072",
+   "q-ft-073",
+   "q-ft-086",
+   "q-ft-088"
   ],
   "challengeQuizIds": null,
   "drillQuizIds": [
@@ -270,7 +295,20 @@
    "q-ft-055",
    "q-ft-056",
    "q-ft-059",
-   "q-ft-060"
+   "q-ft-060",
+   "q-ft-074",
+   "q-ft-075",
+   "q-ft-076",
+   "q-ft-077",
+   "q-ft-078",
+   "q-ft-079",
+   "q-ft-080",
+   "q-ft-081",
+   "q-ft-082",
+   "q-ft-083",
+   "q-ft-084",
+   "q-ft-085",
+   "q-ft-089"
   ],
   "challengeQuizIds": null,
   "drillQuizIds": [
@@ -326,7 +364,16 @@
    "q-sc-036",
    "q-sc-037",
    "q-sc-038",
-   "q-sc-053"
+   "q-sc-053",
+   "q-sc-061",
+   "q-sc-062",
+   "q-sc-063",
+   "q-sc-064",
+   "q-sc-065",
+   "q-sc-066",
+   "q-sc-075",
+   "q-sc-080",
+   "q-sc-089"
   ],
   "challengeQuizIds": null,
   "drillQuizIds": [
@@ -377,7 +424,13 @@
    "q-sc-044",
    "q-sc-054",
    "q-sc-055",
-   "q-sc-059"
+   "q-sc-059",
+   "q-sc-069",
+   "q-sc-070",
+   "q-sc-078",
+   "q-sc-079",
+   "q-sc-084",
+   "q-sc-088"
   ],
   "challengeQuizIds": null,
   "drillQuizIds": [
@@ -433,7 +486,22 @@
    "q-sc-056",
    "q-sc-057",
    "q-sc-058",
-   "q-sc-060"
+   "q-sc-060",
+   "q-sc-067",
+   "q-sc-068",
+   "q-sc-071",
+   "q-sc-072",
+   "q-sc-073",
+   "q-sc-074",
+   "q-sc-076",
+   "q-sc-077",
+   "q-sc-081",
+   "q-sc-082",
+   "q-sc-083",
+   "q-sc-085",
+   "q-sc-086",
+   "q-sc-087",
+   "q-sc-090"
   ],
   "challengeQuizIds": null,
   "drillQuizIds": [
