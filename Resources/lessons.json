@@ -27,10 +27,20 @@
    "q-ov-005",
    "q-ov-006",
    "q-ov-007",
-   "q-ov-020"
+   "q-ov-020",
+   "q-ov-021",
+   "q-ov-022",
+   "q-ov-023",
+   "q-ov-024"
   ],
   "challengeQuizIds": null,
-  "drillQuizIds": null
+  "drillQuizIds": [
+   "qd-ov-001",
+   "qd-ov-002",
+   "qd-ov-003",
+   "qd-ov-004",
+   "qd-ov-005"
+  ]
  },
  {
   "id": "l-ov2",
@@ -58,10 +68,20 @@
    "q-ov-010",
    "q-ov-011",
    "q-ov-012",
-   "q-ov-013"
+   "q-ov-013",
+   "q-ov-025",
+   "q-ov-026",
+   "q-ov-027",
+   "q-ov-032"
   ],
   "challengeQuizIds": null,
-  "drillQuizIds": null
+  "drillQuizIds": [
+   "qd-ov-006",
+   "qd-ov-007",
+   "qd-ov-008",
+   "qd-ov-009",
+   "qd-ov-010"
+  ]
  },
  {
   "id": "l-ov3",
@@ -89,10 +109,20 @@
    "q-ov-016",
    "q-ov-017",
    "q-ov-018",
-   "q-ov-019"
+   "q-ov-019",
+   "q-ov-028",
+   "q-ov-029",
+   "q-ov-030",
+   "q-ov-031"
   ],
   "challengeQuizIds": null,
-  "drillQuizIds": null
+  "drillQuizIds": [
+   "qd-ov-011",
+   "qd-ov-012",
+   "qd-ov-013",
+   "qd-ov-014",
+   "qd-ov-015"
+  ]
  },
  {
   "id": "l-ft1",
@@ -122,10 +152,24 @@
    "q-ft-005",
    "q-ft-006",
    "q-ft-027",
-   "q-ft-028"
+   "q-ft-028",
+   "q-ft-031",
+   "q-ft-032",
+   "q-ft-033",
+   "q-ft-034",
+   "q-ft-035",
+   "q-ft-036",
+   "q-ft-037",
+   "q-ft-038"
   ],
   "challengeQuizIds": null,
-  "drillQuizIds": null
+  "drillQuizIds": [
+   "qd-ft-001",
+   "qd-ft-002",
+   "qd-ft-003",
+   "qd-ft-004",
+   "qd-ft-005"
+  ]
  },
  {
   "id": "l-ft2",
@@ -157,10 +201,30 @@
    "q-ft-013",
    "q-ft-024",
    "q-ft-025",
-   "q-ft-026"
+   "q-ft-026",
+   "q-ft-039",
+   "q-ft-040",
+   "q-ft-041",
+   "q-ft-042",
+   "q-ft-043",
+   "q-ft-044",
+   "q-ft-045",
+   "q-ft-046",
+   "q-ft-057",
+   "q-ft-058"
   ],
   "challengeQuizIds": null,
-  "drillQuizIds": null
+  "drillQuizIds": [
+   "qd-ft-006",
+   "qd-ft-007",
+   "qd-ft-008",
+   "qd-ft-009",
+   "qd-ft-010",
+   "qd-ft-011",
+   "qd-ft-012",
+   "qd-ft-021",
+   "qd-ft-022"
+  ]
  },
  {
   "id": "l-ft3",
@@ -194,10 +258,33 @@
    "q-ft-022",
    "q-ft-023",
    "q-ft-029",
-   "q-ft-030"
+   "q-ft-030",
+   "q-ft-047",
+   "q-ft-048",
+   "q-ft-049",
+   "q-ft-050",
+   "q-ft-051",
+   "q-ft-052",
+   "q-ft-053",
+   "q-ft-054",
+   "q-ft-055",
+   "q-ft-056",
+   "q-ft-059",
+   "q-ft-060"
   ],
   "challengeQuizIds": null,
-  "drillQuizIds": null
+  "drillQuizIds": [
+   "qd-ft-013",
+   "qd-ft-014",
+   "qd-ft-015",
+   "qd-ft-016",
+   "qd-ft-017",
+   "qd-ft-018",
+   "qd-ft-019",
+   "qd-ft-020",
+   "qd-ft-023",
+   "qd-ft-024"
+  ]
  },
  {
   "id": "l-sc1",
@@ -230,10 +317,27 @@
    "q-sc-008",
    "q-sc-009",
    "q-sc-027",
-   "q-sc-028"
+   "q-sc-028",
+   "q-sc-031",
+   "q-sc-032",
+   "q-sc-033",
+   "q-sc-034",
+   "q-sc-035",
+   "q-sc-036",
+   "q-sc-037",
+   "q-sc-038",
+   "q-sc-053"
   ],
   "challengeQuizIds": null,
-  "drillQuizIds": null
+  "drillQuizIds": [
+   "qd-sc-001",
+   "qd-sc-002",
+   "qd-sc-003",
+   "qd-sc-004",
+   "qd-sc-005",
+   "qd-sc-006",
+   "qd-sc-007"
+  ]
  },
  {
   "id": "l-sc2",
@@ -264,10 +368,28 @@
    "q-sc-015",
    "q-sc-024",
    "q-sc-025",
-   "q-sc-029"
+   "q-sc-029",
+   "q-sc-039",
+   "q-sc-040",
+   "q-sc-041",
+   "q-sc-042",
+   "q-sc-043",
+   "q-sc-044",
+   "q-sc-054",
+   "q-sc-055",
+   "q-sc-059"
   ],
   "challengeQuizIds": null,
-  "drillQuizIds": null
+  "drillQuizIds": [
+   "qd-sc-008",
+   "qd-sc-009",
+   "qd-sc-010",
+   "qd-sc-011",
+   "qd-sc-012",
+   "qd-sc-013",
+   "qd-sc-014",
+   "qd-sc-023"
+  ]
  },
  {
   "id": "l-sc3",
@@ -299,9 +421,31 @@
    "q-sc-022",
    "q-sc-023",
    "q-sc-026",
-   "q-sc-030"
+   "q-sc-030",
+   "q-sc-045",
+   "q-sc-046",
+   "q-sc-047",
+   "q-sc-048",
+   "q-sc-049",
+   "q-sc-050",
+   "q-sc-051",
+   "q-sc-052",
+   "q-sc-056",
+   "q-sc-057",
+   "q-sc-058",
+   "q-sc-060"
   ],
   "challengeQuizIds": null,
-  "drillQuizIds": null
+  "drillQuizIds": [
+   "qd-sc-015",
+   "qd-sc-016",
+   "qd-sc-017",
+   "qd-sc-018",
+   "qd-sc-019",
+   "qd-sc-020",
+   "qd-sc-021",
+   "qd-sc-022",
+   "qd-sc-024"
+  ]
  }
 ]
