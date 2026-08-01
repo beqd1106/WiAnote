@@ -1,26 +1,554 @@
 [
- {"id":"qd-sc-001","question":"【用途】自動化する作業の手順をフローチャートでまとめたものはどれ？","choices":["シナリオ","ライセンス","ログ","パレット"],"correctAnswers":[0],"lessonTheme":"シナリオ作成の基本","explanation":"手順をフローチャートでまとめたものがシナリオです。","wrongChoiceExplanations":{},"domain":"scenario","service":"シナリオとは","difficulty":1,"tags":["ドリル"],"beginnerNote":null},
- {"id":"qd-sc-002","question":"【穴埋め】シナリオ作成の基本操作は、部品を（　）へドラッグして並べること。","choices":["フローチャート","プロパティ","ログ","メニュー"],"correctAnswers":[0],"lessonTheme":"シナリオ作成の基本","explanation":"部品はフローチャートへドラッグして並べます。","wrongChoiceExplanations":{},"domain":"scenario","service":"シナリオ作成","difficulty":1,"tags":["ドリル"],"beginnerNote":null},
- {"id":"qd-sc-003","question":"【用途】1ノードずつ動かして変数や動作を確認する実行方法はどれ？","choices":["ステップ実行","一括実行","保存","記録停止"],"correctAnswers":[0],"lessonTheme":"シナリオ作成の基本","explanation":"1ノードずつ確認するのがステップ実行です。","wrongChoiceExplanations":{},"domain":"scenario","service":"ステップ実行","difficulty":1,"tags":["ドリル"],"beginnerNote":null},
- {"id":"qd-sc-004","question":"【説明】『シナリオの一部だけを実行できるフル機能版の機能』はどれ？","choices":["部分実行","一時停止","保存","記録"],"correctAnswers":[0],"lessonTheme":"シナリオ作成の基本","explanation":"一部だけ実行できるのが部分実行です。","wrongChoiceExplanations":{},"domain":"scenario","service":"部分実行","difficulty":2,"tags":["ドリル"],"beginnerNote":null},
- {"id":"qd-sc-005","question":"【誤り探し】シナリオ作成の進め方として誤っているものはどれ？","choices":["完成後は一度も実行せずに納品する","記録で大枠を作る","ノードで細部を仕上げる","こまめに実行して確認する"],"correctAnswers":[0],"lessonTheme":"シナリオ作成の基本","explanation":"実行して確認せずに納品するのは危険で誤りです。","wrongChoiceExplanations":{},"domain":"scenario","service":"フロー設計","difficulty":2,"tags":["ドリル"],"beginnerNote":null},
- {"id":"qd-sc-006","question":"【穴埋め】実行を終わらせるのは（　）、後で再開するのは一時停止。","choices":["停止","保存","記録","分岐"],"correctAnswers":[0],"lessonTheme":"シナリオ作成の基本","explanation":"実行を終わらせるのは停止、再開前提は一時停止です。","wrongChoiceExplanations":{},"domain":"scenario","service":"シナリオ実行","difficulty":1,"tags":["ドリル"],"beginnerNote":null},
- {"id":"qd-sc-007","question":"【シナリオ】共通する手順を複数のシナリオで使い回したい。使うのは？","choices":["サブシナリオ","コメント","待機","ログ"],"correctAnswers":[0],"lessonTheme":"シナリオ作成の基本","explanation":"共通手順の再利用はサブシナリオです。","wrongChoiceExplanations":{},"domain":"scenario","service":"シナリオ設計","difficulty":2,"tags":["ドリル"],"beginnerNote":null},
- {"id":"qd-sc-008","question":"【用途】条件が成り立つかどうかで処理を振り分けるのはどれ？","choices":["条件分岐","繰り返し","待機","保存"],"correctAnswers":[0],"lessonTheme":"分岐・繰り返しの組み立て","explanation":"条件で振り分けるのが条件分岐です。","wrongChoiceExplanations":{},"domain":"scenario","service":"条件分岐の組み立て","difficulty":1,"tags":["ドリル"],"beginnerNote":null},
- {"id":"qd-sc-009","question":"【シナリオ】データ一覧の各行を順に処理したい。基本形は？","choices":["行数だけ繰り返し各行を変数へ","1行目だけ処理","全行を1変数へ","繰り返さない"],"correctAnswers":[0],"lessonTheme":"分岐・繰り返しの組み立て","explanation":"行数だけ繰り返し各行を変数へ取り出して処理します。","wrongChoiceExplanations":{},"domain":"scenario","service":"データ一覧ループ","difficulty":2,"tags":["ドリル"],"beginnerNote":null},
- {"id":"qd-sc-010","question":"【穴埋め】処理回数や現在行の管理には（　）変数を使う。","choices":["カウンタ","画像","色","ライセンス"],"correctAnswers":[0],"lessonTheme":"分岐・繰り返しの組み立て","explanation":"回数や行番号の管理はカウンタ変数です。","wrongChoiceExplanations":{},"domain":"scenario","service":"カウンタ","difficulty":2,"tags":["ドリル"],"beginnerNote":null},
- {"id":"qd-sc-011","question":"【用途】処理済み/未処理などの状態を表す変数の使い方はどれ？","choices":["フラグ","カウンタのみ","コメント","ログ"],"correctAnswers":[0],"lessonTheme":"分岐・繰り返しの組み立て","explanation":"状態を表すのはフラグの使い方です。","wrongChoiceExplanations":{},"domain":"scenario","service":"フラグ","difficulty":2,"tags":["ドリル"],"beginnerNote":null},
- {"id":"qd-sc-012","question":"【シナリオ】特定条件で繰り返しを途中で抜けたい。どうする？","choices":["繰り返し内に分岐を置き条件成立で終える","抜けられないので放置","待機で抜ける","変数を消す"],"correctAnswers":[0],"lessonTheme":"分岐・繰り返しの組み立て","explanation":"繰り返し内に分岐を置いて条件成立時に抜けます。","wrongChoiceExplanations":{},"domain":"scenario","service":"繰り返しの組み立て","difficulty":3,"tags":["ドリル"],"beginnerNote":null},
- {"id":"qd-sc-013","question":"【誤り探し】繰り返しの終了条件についての説明で誤っているものはどれ？","choices":["終了条件は設定できず必ず無限に続く","誤ると止まらなくなることがある","回数で終える方法がある","条件成立まで続ける方法がある"],"correctAnswers":[0],"lessonTheme":"分岐・繰り返しの組み立て","explanation":"終了条件や回数を設定でき、無限に続くわけではありません。","wrongChoiceExplanations":{},"domain":"scenario","service":"ループ条件","difficulty":2,"tags":["ドリル"],"beginnerNote":null},
- {"id":"qd-sc-014","question":"【シナリオ】エラーが起きた行だけ別処理にし残りは続けたい。使うのは？","choices":["分岐でエラー行を振り分ける","全体を即終了","エラーを無視","データ一覧を消す"],"correctAnswers":[0],"lessonTheme":"分岐・繰り返しの組み立て","explanation":"分岐でエラー行を別処理へ振り分け残りを続けます。","wrongChoiceExplanations":{},"domain":"scenario","service":"エラー時分岐","difficulty":3,"tags":["ドリル"],"beginnerNote":null},
- {"id":"qd-sc-015","question":"【用途】思いどおり動かないとき原因を切り分ける基本手段はどれ？","choices":["ステップ実行","作り直し","アプリ削除","再起動"],"correctAnswers":[0],"lessonTheme":"デバッグ・例外処理・保守","explanation":"原因の切り分けはステップ実行が基本です。","wrongChoiceExplanations":{},"domain":"scenario","service":"デバッグ","difficulty":1,"tags":["ドリル"],"beginnerNote":null},
- {"id":"qd-sc-016","question":"【用途】指定位置で処理を止めて状態を確認するデバッグ機能はどれ？","choices":["ブレークポイント","コメント","グループ","ログ削除"],"correctAnswers":[0],"lessonTheme":"デバッグ・例外処理・保守","explanation":"指定位置で止めるのはブレークポイントです。","wrongChoiceExplanations":{},"domain":"scenario","service":"ブレークポイント","difficulty":2,"tags":["ドリル"],"beginnerNote":null},
- {"id":"qd-sc-017","question":"【説明】『エラー時も止めず、決めた対応へ流す仕組み』はどれ？","choices":["例外処理","繰り返し","保存","記録"],"correctAnswers":[0],"lessonTheme":"デバッグ・例外処理・保守","explanation":"エラー時の備えが例外処理です。","wrongChoiceExplanations":{},"domain":"scenario","service":"例外処理","difficulty":2,"tags":["ドリル"],"beginnerNote":null},
- {"id":"qd-sc-018","question":"【シナリオ】エラーの原因を後で追いたい。残すべきものは？","choices":["ログとエラー時のスクショ","不要な変数","古い証書","未使用ノード"],"correctAnswers":[0],"lessonTheme":"デバッグ・例外処理・保守","explanation":"ログとエラー時スクショが原因追跡に役立ちます。","wrongChoiceExplanations":{},"domain":"scenario","service":"ログ","difficulty":2,"tags":["ドリル"],"beginnerNote":null},
- {"id":"qd-sc-019","question":"【穴埋め】値は各ノードに（　）せず、変数やデータ一覧で管理する。","choices":["べた書き","保存","暗号化","分割"],"correctAnswers":[0],"lessonTheme":"デバッグ・例外処理・保守","explanation":"値のべた書きを避け変数・データ一覧で管理します。","wrongChoiceExplanations":{},"domain":"scenario","service":"シナリオの保守","difficulty":2,"tags":["ドリル"],"beginnerNote":null},
- {"id":"qd-sc-020","question":"【用途】想定外の画面が出たとき安全に処理を分けるのはどれ？","choices":["分岐で検知して安全終了/通知","そのまま操作継続","変数削除","再インストール"],"correctAnswers":[0],"lessonTheme":"デバッグ・例外処理・保守","explanation":"想定外は分岐で検知して安全終了や通知へ進めます。","wrongChoiceExplanations":{},"domain":"scenario","service":"エラー時分岐","difficulty":3,"tags":["ドリル"],"beginnerNote":null},
- {"id":"qd-sc-021","question":"【誤り探し】保守性を高める工夫として誤っているものはどれ？","choices":["変数名を意味のない記号にする","コメントで意図を残す","共通処理をサブシナリオ化","グループで整理する"],"correctAnswers":[0],"lessonTheme":"デバッグ・例外処理・保守","explanation":"意味のない変数名は保守を妨げます。","wrongChoiceExplanations":{},"domain":"scenario","service":"保守性","difficulty":2,"tags":["ドリル"],"beginnerNote":null},
- {"id":"qd-sc-022","question":"【シナリオ】実行結果を担当者へ知らせたい。活用するライブラリは？","choices":["メール送信","画像マッチング","待機","コメント"],"correctAnswers":[0],"lessonTheme":"デバッグ・例外処理・保守","explanation":"結果通知はメール送信のライブラリが使えます。","wrongChoiceExplanations":{},"domain":"scenario","service":"エラー対応","difficulty":2,"tags":["ドリル"],"beginnerNote":null},
- {"id":"qd-sc-023","question":"【用途】アプリの反応遅れに備える基本のノードはどれ？","choices":["待機","コメント","保存","記録"],"correctAnswers":[0],"lessonTheme":"分岐・繰り返しの組み立て","explanation":"反応遅れには待機で表示・完了を待ちます。","wrongChoiceExplanations":{},"domain":"scenario","service":"エラー対応","difficulty":1,"tags":["ドリル"],"beginnerNote":null},
- {"id":"qd-sc-024","question":"【誤り探し】シナリオは作って終わりでない理由として誤っているものはどれ？","choices":["保存すると必ず壊れるから","業務が変わると直す必要があるから","対象画面が変わると直す必要があるから","保守しやすい作りが重要だから"],"correctAnswers":[0],"lessonTheme":"デバッグ・例外処理・保守","explanation":"保存で必ず壊れることはありません。保守が必要なのは業務・画面の変化のためです。","wrongChoiceExplanations":{},"domain":"scenario","service":"シナリオの保守","difficulty":2,"tags":["ドリル"],"beginnerNote":null}
+ {
+  "id": "qd-sc-001",
+  "question": "【用途】自動化する作業の手順をフローチャートでまとめたものはどれ？",
+  "choices": [
+   "シナリオ",
+   "ライセンス",
+   "ログ",
+   "パレット"
+  ],
+  "correctAnswers": [
+   0
+  ],
+  "lessonTheme": "シナリオ作成の基本",
+  "explanation": "手順をフローチャートでまとめたものがシナリオです。",
+  "wrongChoiceExplanations": {},
+  "domain": "scenario",
+  "service": "シナリオとは",
+  "difficulty": 1,
+  "tags": [
+   "ドリル"
+  ],
+  "beginnerNote": null
+ },
+ {
+  "id": "qd-sc-002",
+  "question": "【穴埋め】シナリオ作成の基本操作は、部品を（　）へドラッグして並べること。",
+  "choices": [
+   "フローチャート",
+   "プロパティ",
+   "ログ",
+   "メニュー"
+  ],
+  "correctAnswers": [
+   0
+  ],
+  "lessonTheme": "シナリオ作成の基本",
+  "explanation": "部品はフローチャートへドラッグして並べます。",
+  "wrongChoiceExplanations": {},
+  "domain": "scenario",
+  "service": "シナリオ作成",
+  "difficulty": 1,
+  "tags": [
+   "ドリル"
+  ],
+  "beginnerNote": null
+ },
+ {
+  "id": "qd-sc-003",
+  "question": "【用途】1ノードずつ動かして変数や動作を確認する実行方法はどれ？",
+  "choices": [
+   "ステップ実行",
+   "一括実行",
+   "保存",
+   "記録停止"
+  ],
+  "correctAnswers": [
+   0
+  ],
+  "lessonTheme": "シナリオ作成の基本",
+  "explanation": "1ノードずつ確認するのがステップ実行です。",
+  "wrongChoiceExplanations": {},
+  "domain": "scenario",
+  "service": "ステップ実行",
+  "difficulty": 1,
+  "tags": [
+   "ドリル"
+  ],
+  "beginnerNote": null
+ },
+ {
+  "id": "qd-sc-004",
+  "question": "【説明】『シナリオの一部だけを実行できるフル機能版の機能』はどれ？",
+  "choices": [
+   "部分実行",
+   "一時停止",
+   "保存",
+   "記録"
+  ],
+  "correctAnswers": [
+   0
+  ],
+  "lessonTheme": "シナリオ作成の基本",
+  "explanation": "一部だけ実行できるのが部分実行です。",
+  "wrongChoiceExplanations": {},
+  "domain": "scenario",
+  "service": "部分実行",
+  "difficulty": 2,
+  "tags": [
+   "ドリル"
+  ],
+  "beginnerNote": null
+ },
+ {
+  "id": "qd-sc-005",
+  "question": "【誤り探し】シナリオ作成の進め方として誤っているものはどれ？",
+  "choices": [
+   "完成後は一度も実行せずに納品する",
+   "記録で大枠を作る",
+   "ノードで細部を仕上げる",
+   "こまめに実行して確認する"
+  ],
+  "correctAnswers": [
+   0
+  ],
+  "lessonTheme": "シナリオ作成の基本",
+  "explanation": "実行して確認せずに納品するのは危険で誤りです。",
+  "wrongChoiceExplanations": {},
+  "domain": "scenario",
+  "service": "フロー設計",
+  "difficulty": 2,
+  "tags": [
+   "ドリル"
+  ],
+  "beginnerNote": null
+ },
+ {
+  "id": "qd-sc-006",
+  "question": "【穴埋め】実行を終わらせるのは（　）、後で再開するのは一時停止。",
+  "choices": [
+   "停止",
+   "保存",
+   "記録",
+   "分岐"
+  ],
+  "correctAnswers": [
+   0
+  ],
+  "lessonTheme": "シナリオ作成の基本",
+  "explanation": "実行を終わらせるのは停止、再開前提は一時停止です。",
+  "wrongChoiceExplanations": {},
+  "domain": "scenario",
+  "service": "シナリオ実行",
+  "difficulty": 1,
+  "tags": [
+   "ドリル"
+  ],
+  "beginnerNote": null
+ },
+ {
+  "id": "qd-sc-007",
+  "question": "【シナリオ】共通する手順を複数の場所で使い回したい。使うのは？",
+  "choices": [
+   "サブルーチン",
+   "グループ",
+   "付箋",
+   "浮きフロー"
+  ],
+  "correctAnswers": [
+   0
+  ],
+  "lessonTheme": "シナリオ作成の基本",
+  "explanation": "再利用するならサブルーチン。グループは整理のためのまとまりです。",
+  "wrongChoiceExplanations": {},
+  "domain": "scenario",
+  "service": "サブルーチン",
+  "difficulty": 1,
+  "tags": [
+   "ドリル"
+  ],
+  "beginnerNote": null
+ },
+ {
+  "id": "qd-sc-008",
+  "question": "【用途】条件が成り立つかどうかで処理を振り分けるのはどれ？",
+  "choices": [
+   "条件分岐",
+   "繰り返し",
+   "待機",
+   "保存"
+  ],
+  "correctAnswers": [
+   0
+  ],
+  "lessonTheme": "分岐・繰り返しの組み立て",
+  "explanation": "条件で振り分けるのが条件分岐です。",
+  "wrongChoiceExplanations": {},
+  "domain": "scenario",
+  "service": "条件分岐の組み立て",
+  "difficulty": 1,
+  "tags": [
+   "ドリル"
+  ],
+  "beginnerNote": null
+ },
+ {
+  "id": "qd-sc-009",
+  "question": "【シナリオ】データ一覧の各行を順に処理したい。基本形は？",
+  "choices": [
+   "行数だけ繰り返し各行を変数へ",
+   "1行目だけ処理",
+   "全行を1変数へ",
+   "繰り返さない"
+  ],
+  "correctAnswers": [
+   0
+  ],
+  "lessonTheme": "分岐・繰り返しの組み立て",
+  "explanation": "行数だけ繰り返し各行を変数へ取り出して処理します。",
+  "wrongChoiceExplanations": {},
+  "domain": "scenario",
+  "service": "データ一覧ループ",
+  "difficulty": 2,
+  "tags": [
+   "ドリル"
+  ],
+  "beginnerNote": null
+ },
+ {
+  "id": "qd-sc-010",
+  "question": "【穴埋め】処理回数や現在行の管理には（　）変数を使う。",
+  "choices": [
+   "カウンタ",
+   "画像",
+   "色",
+   "ライセンス"
+  ],
+  "correctAnswers": [
+   0
+  ],
+  "lessonTheme": "分岐・繰り返しの組み立て",
+  "explanation": "回数や行番号の管理はカウンタ変数です。",
+  "wrongChoiceExplanations": {},
+  "domain": "scenario",
+  "service": "カウンタ",
+  "difficulty": 2,
+  "tags": [
+   "ドリル"
+  ],
+  "beginnerNote": null
+ },
+ {
+  "id": "qd-sc-011",
+  "question": "【用途】処理済み/未処理などの状態を表す変数の使い方はどれ？",
+  "choices": [
+   "フラグ",
+   "カウンタのみ",
+   "コメント",
+   "ログ"
+  ],
+  "correctAnswers": [
+   0
+  ],
+  "lessonTheme": "分岐・繰り返しの組み立て",
+  "explanation": "状態を表すのはフラグの使い方です。",
+  "wrongChoiceExplanations": {},
+  "domain": "scenario",
+  "service": "フラグ",
+  "difficulty": 2,
+  "tags": [
+   "ドリル"
+  ],
+  "beginnerNote": null
+ },
+ {
+  "id": "qd-sc-012",
+  "question": "【シナリオ】特定条件で繰り返しを途中で抜けたい。どうする？",
+  "choices": [
+   "繰り返し内に分岐を置き条件成立で終える",
+   "抜けられないので放置",
+   "待機で抜ける",
+   "変数を消す"
+  ],
+  "correctAnswers": [
+   0
+  ],
+  "lessonTheme": "分岐・繰り返しの組み立て",
+  "explanation": "繰り返し内に分岐を置いて条件成立時に抜けます。",
+  "wrongChoiceExplanations": {},
+  "domain": "scenario",
+  "service": "繰り返しの組み立て",
+  "difficulty": 3,
+  "tags": [
+   "ドリル"
+  ],
+  "beginnerNote": null
+ },
+ {
+  "id": "qd-sc-013",
+  "question": "【誤り探し】繰り返しの終了条件についての説明で誤っているものはどれ？",
+  "choices": [
+   "終了条件は設定できず必ず無限に続く",
+   "誤ると止まらなくなることがある",
+   "回数で終える方法がある",
+   "条件成立まで続ける方法がある"
+  ],
+  "correctAnswers": [
+   0
+  ],
+  "lessonTheme": "分岐・繰り返しの組み立て",
+  "explanation": "終了条件や回数を設定でき、無限に続くわけではありません。",
+  "wrongChoiceExplanations": {},
+  "domain": "scenario",
+  "service": "ループ条件",
+  "difficulty": 2,
+  "tags": [
+   "ドリル"
+  ],
+  "beginnerNote": null
+ },
+ {
+  "id": "qd-sc-014",
+  "question": "【シナリオ】エラーが起きた行だけ別処理にし残りは続けたい。使うのは？",
+  "choices": [
+   "分岐でエラー行を振り分ける",
+   "全体を即終了",
+   "エラーを無視",
+   "データ一覧を消す"
+  ],
+  "correctAnswers": [
+   0
+  ],
+  "lessonTheme": "分岐・繰り返しの組み立て",
+  "explanation": "分岐でエラー行を別処理へ振り分け残りを続けます。",
+  "wrongChoiceExplanations": {},
+  "domain": "scenario",
+  "service": "エラー時分岐",
+  "difficulty": 3,
+  "tags": [
+   "ドリル"
+  ],
+  "beginnerNote": null
+ },
+ {
+  "id": "qd-sc-015",
+  "question": "【用途】思いどおり動かないとき原因を切り分ける基本手段はどれ？",
+  "choices": [
+   "ステップ実行",
+   "作り直し",
+   "アプリ削除",
+   "再起動"
+  ],
+  "correctAnswers": [
+   0
+  ],
+  "lessonTheme": "デバッグ・例外処理・保守",
+  "explanation": "原因の切り分けはステップ実行が基本です。",
+  "wrongChoiceExplanations": {},
+  "domain": "scenario",
+  "service": "デバッグ",
+  "difficulty": 1,
+  "tags": [
+   "ドリル"
+  ],
+  "beginnerNote": null
+ },
+ {
+  "id": "qd-sc-016",
+  "question": "【用途】指定位置で処理を止めて状態を確認するデバッグ機能はどれ？",
+  "choices": [
+   "ブレークポイント",
+   "コメント",
+   "グループ",
+   "ログ削除"
+  ],
+  "correctAnswers": [
+   0
+  ],
+  "lessonTheme": "デバッグ・例外処理・保守",
+  "explanation": "指定位置で止めるのはブレークポイントです。",
+  "wrongChoiceExplanations": {},
+  "domain": "scenario",
+  "service": "ブレークポイント",
+  "difficulty": 2,
+  "tags": [
+   "ドリル"
+  ],
+  "beginnerNote": null
+ },
+ {
+  "id": "qd-sc-017",
+  "question": "【説明】『エラー時も止めず、決めた対応へ流す仕組み』はどれ？",
+  "choices": [
+   "例外処理",
+   "繰り返し",
+   "保存",
+   "記録"
+  ],
+  "correctAnswers": [
+   0
+  ],
+  "lessonTheme": "デバッグ・例外処理・保守",
+  "explanation": "エラー時の備えが例外処理です。",
+  "wrongChoiceExplanations": {},
+  "domain": "scenario",
+  "service": "例外処理",
+  "difficulty": 2,
+  "tags": [
+   "ドリル"
+  ],
+  "beginnerNote": null
+ },
+ {
+  "id": "qd-sc-018",
+  "question": "【シナリオ】エラーの原因を後で追いたい。残すべきものは？",
+  "choices": [
+   "ログとエラー時のスクショ",
+   "不要な変数",
+   "古い証書",
+   "未使用ノード"
+  ],
+  "correctAnswers": [
+   0
+  ],
+  "lessonTheme": "デバッグ・例外処理・保守",
+  "explanation": "ログとエラー時スクショが原因追跡に役立ちます。",
+  "wrongChoiceExplanations": {},
+  "domain": "scenario",
+  "service": "ログ",
+  "difficulty": 2,
+  "tags": [
+   "ドリル"
+  ],
+  "beginnerNote": null
+ },
+ {
+  "id": "qd-sc-019",
+  "question": "【穴埋め】値は各ノードに（　）せず、変数やデータ一覧で管理する。",
+  "choices": [
+   "べた書き",
+   "保存",
+   "暗号化",
+   "分割"
+  ],
+  "correctAnswers": [
+   0
+  ],
+  "lessonTheme": "デバッグ・例外処理・保守",
+  "explanation": "値のべた書きを避け変数・データ一覧で管理します。",
+  "wrongChoiceExplanations": {},
+  "domain": "scenario",
+  "service": "シナリオの保守",
+  "difficulty": 2,
+  "tags": [
+   "ドリル"
+  ],
+  "beginnerNote": null
+ },
+ {
+  "id": "qd-sc-020",
+  "question": "【用途】想定外の画面が出たとき安全に処理を分けるのはどれ？",
+  "choices": [
+   "分岐で検知して安全終了/通知",
+   "そのまま操作継続",
+   "変数削除",
+   "再インストール"
+  ],
+  "correctAnswers": [
+   0
+  ],
+  "lessonTheme": "デバッグ・例外処理・保守",
+  "explanation": "想定外は分岐で検知して安全終了や通知へ進めます。",
+  "wrongChoiceExplanations": {},
+  "domain": "scenario",
+  "service": "エラー時分岐",
+  "difficulty": 3,
+  "tags": [
+   "ドリル"
+  ],
+  "beginnerNote": null
+ },
+ {
+  "id": "qd-sc-021",
+  "question": "【誤り探し】保守性を高める工夫として誤っているものはどれ？",
+  "choices": [
+   "変数名を意味のない記号にする",
+   "コメントで意図を残す",
+   "共通処理をサブシナリオ化",
+   "グループで整理する"
+  ],
+  "correctAnswers": [
+   0
+  ],
+  "lessonTheme": "デバッグ・例外処理・保守",
+  "explanation": "意味のない変数名は保守を妨げます。",
+  "wrongChoiceExplanations": {},
+  "domain": "scenario",
+  "service": "保守性",
+  "difficulty": 2,
+  "tags": [
+   "ドリル"
+  ],
+  "beginnerNote": null
+ },
+ {
+  "id": "qd-sc-022",
+  "question": "【シナリオ】実行結果を担当者へ知らせたい。活用するライブラリは？",
+  "choices": [
+   "メール送信",
+   "画像マッチング",
+   "待機",
+   "コメント"
+  ],
+  "correctAnswers": [
+   0
+  ],
+  "lessonTheme": "デバッグ・例外処理・保守",
+  "explanation": "結果通知はメール送信のライブラリが使えます。",
+  "wrongChoiceExplanations": {},
+  "domain": "scenario",
+  "service": "エラー対応",
+  "difficulty": 2,
+  "tags": [
+   "ドリル"
+  ],
+  "beginnerNote": null
+ },
+ {
+  "id": "qd-sc-023",
+  "question": "【用途】アプリの反応遅れに備える基本のノードはどれ？",
+  "choices": [
+   "待機",
+   "コメント",
+   "保存",
+   "記録"
+  ],
+  "correctAnswers": [
+   0
+  ],
+  "lessonTheme": "分岐・繰り返しの組み立て",
+  "explanation": "反応遅れには待機で表示・完了を待ちます。",
+  "wrongChoiceExplanations": {},
+  "domain": "scenario",
+  "service": "エラー対応",
+  "difficulty": 1,
+  "tags": [
+   "ドリル"
+  ],
+  "beginnerNote": null
+ },
+ {
+  "id": "qd-sc-024",
+  "question": "【誤り探し】シナリオは作って終わりでない理由として誤っているものはどれ？",
+  "choices": [
+   "保存すると必ず壊れるから",
+   "業務が変わると直す必要があるから",
+   "対象画面が変わると直す必要があるから",
+   "保守しやすい作りが重要だから"
+  ],
+  "correctAnswers": [
+   0
+  ],
+  "lessonTheme": "デバッグ・例外処理・保守",
+  "explanation": "保存で必ず壊れることはありません。保守が必要なのは業務・画面の変化のためです。",
+  "wrongChoiceExplanations": {},
+  "domain": "scenario",
+  "service": "シナリオの保守",
+  "difficulty": 2,
+  "tags": [
+   "ドリル"
+  ],
+  "beginnerNote": null
+ }
 ]

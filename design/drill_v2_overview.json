@@ -1,0 +1,370 @@
+[
+ {
+  "id": "qd-ov-016",
+  "question": "【穴埋め】WinActorの3つの主要機能は、記録・編集・（　）である。",
+  "choices": [
+   "実行",
+   "監視",
+   "分析",
+   "設計"
+  ],
+  "correctAnswers": [
+   0
+  ],
+  "lessonTheme": "RPAとWinActorの基礎",
+  "explanation": "記録・編集・実行の3つが主要機能です。",
+  "wrongChoiceExplanations": {},
+  "domain": "overview",
+  "service": "主要機能",
+  "difficulty": 1,
+  "tags": [
+   "ドリル"
+  ],
+  "beginnerNote": null
+ },
+ {
+  "id": "qd-ov-017",
+  "question": "【用途】画面部品に通し番号やXPathを付けて識別する自動操作インターフェースは？",
+  "choices": [
+   "UI識別型",
+   "画像識別型",
+   "座標指定型",
+   "ファイル向け"
+  ],
+  "correctAnswers": [
+   0
+  ],
+  "lessonTheme": "RPAとWinActorの基礎",
+  "explanation": "UI識別型は要素を識別して操作します。",
+  "wrongChoiceExplanations": {},
+  "domain": "overview",
+  "service": "自動操作インターフェース",
+  "difficulty": 1,
+  "tags": [
+   "ドリル"
+  ],
+  "beginnerNote": null
+ },
+ {
+  "id": "qd-ov-018",
+  "question": "【説明】『Excelのファイル名・シート名・セル名を指定して読み書きする』のはどれ？",
+  "choices": [
+   "ファイル向け",
+   "UI識別型",
+   "画像識別型",
+   "座標指定型"
+  ],
+  "correctAnswers": [
+   0
+  ],
+  "lessonTheme": "RPAとWinActorの基礎",
+  "explanation": "ファイル向けはExcel操作ノードで実現します。",
+  "wrongChoiceExplanations": {},
+  "domain": "overview",
+  "service": "自動操作インターフェース",
+  "difficulty": 1,
+  "tags": [
+   "ドリル"
+  ],
+  "beginnerNote": null
+ },
+ {
+  "id": "qd-ov-019",
+  "question": "【用途】管理サーバからの指示でシナリオを実行する専用のライセンス種別は？",
+  "choices": [
+   "管理実行版",
+   "フル機能版",
+   "実行版",
+   "評価版"
+  ],
+  "correctAnswers": [
+   0
+  ],
+  "lessonTheme": "エディションとライセンス",
+  "explanation": "管理実行版はフローティングライセンスのみで提供されます。",
+  "wrongChoiceExplanations": {},
+  "domain": "overview",
+  "service": "ライセンス種別",
+  "difficulty": 1,
+  "tags": [
+   "ドリル"
+  ],
+  "beginnerNote": null
+ },
+ {
+  "id": "qd-ov-020",
+  "question": "【誤り探し】実行版の説明として誤っているものはどれ？",
+  "choices": [
+   "部分実行やここから実行ができる",
+   "シナリオを開いて全体実行できる",
+   "記録・編集はできない",
+   "データ一覧やログ出力は表示できる"
+  ],
+  "correctAnswers": [
+   0
+  ],
+  "lessonTheme": "エディションとライセンス",
+  "explanation": "実行版では部分実行と「ここから実行」ができません。",
+  "wrongChoiceExplanations": {},
+  "domain": "overview",
+  "service": "実行版",
+  "difficulty": 1,
+  "tags": [
+   "ドリル"
+  ],
+  "beginnerNote": null
+ },
+ {
+  "id": "qd-ov-021",
+  "question": "【穴埋め】WinActorの実行環境は .NET Framework （　）以上である。",
+  "choices": [
+   "4.8",
+   "3.5",
+   "5.0",
+   "2.0"
+  ],
+  "correctAnswers": [
+   0
+  ],
+  "lessonTheme": "エディションとライセンス",
+  "explanation": "ソフトウェア環境条件は .NET Framework 4.8以上です。",
+  "wrongChoiceExplanations": {},
+  "domain": "overview",
+  "service": "動作環境",
+  "difficulty": 1,
+  "tags": [
+   "ドリル"
+  ],
+  "beginnerNote": null
+ },
+ {
+  "id": "qd-ov-022",
+  "question": "【用途】ノード・ライブラリ・サブシナリオ・お気に入り・検索のタブがあるエリアは？",
+  "choices": [
+   "パレットエリア",
+   "機能編集エリア",
+   "プロパティエリア",
+   "ステータスバー"
+  ],
+  "correctAnswers": [
+   0
+  ],
+  "lessonTheme": "画面構成と部品",
+  "explanation": "パレットエリアは5つのタブで切り替えます。",
+  "wrongChoiceExplanations": {},
+  "domain": "overview",
+  "service": "パレット",
+  "difficulty": 1,
+  "tags": [
+   "ドリル"
+  ],
+  "beginnerNote": null
+ },
+ {
+  "id": "qd-ov-023",
+  "question": "【穴埋め】ノードパレットのカテゴリは、フロー・アクション・ユーザ・（　）の4つ。",
+  "choices": [
+   "変数",
+   "実行",
+   "記録",
+   "保存"
+  ],
+  "correctAnswers": [
+   0
+  ],
+  "lessonTheme": "画面構成と部品",
+  "explanation": "変数カテゴリには変数値設定や四則演算があります。",
+  "wrongChoiceExplanations": {},
+  "domain": "overview",
+  "service": "ノードパレット",
+  "difficulty": 1,
+  "tags": [
+   "ドリル"
+  ],
+  "beginnerNote": null
+ },
+ {
+  "id": "qd-ov-024",
+  "question": "【シナリオ】実行ログのノードIDから該当ノードへ飛びたい。使うタブは？",
+  "choices": [
+   "ログ出力",
+   "イメージ",
+   "テキスト変換辞書",
+   "呼び出し履歴"
+  ],
+  "correctAnswers": [
+   0
+  ],
+  "lessonTheme": "画面構成と部品",
+  "explanation": "ログ出力タブでノードIDをクリックするとジャンプできます。",
+  "wrongChoiceExplanations": {},
+  "domain": "overview",
+  "service": "機能編集エリア",
+  "difficulty": 1,
+  "tags": [
+   "ドリル"
+  ],
+  "beginnerNote": null
+ },
+ {
+  "id": "qd-ov-025",
+  "question": "【用途】起動時に開くシナリオファイルを指定する起動オプションは？",
+  "choices": [
+   "-f",
+   "-r",
+   "-d",
+   "-t"
+  ],
+  "correctAnswers": [
+   0
+  ],
+  "lessonTheme": "起動・終了と起動オプション",
+  "explanation": "-f はシナリオファイルのパスを指定します。",
+  "wrongChoiceExplanations": {},
+  "domain": "overview",
+  "service": "起動オプション",
+  "difficulty": 1,
+  "tags": [
+   "ドリル"
+  ],
+  "beginnerNote": null
+ },
+ {
+  "id": "qd-ov-026",
+  "question": "【穴埋め】実行完了後にWinActorを終了するのは（　）オプション。",
+  "choices": [
+   "-e",
+   "-w",
+   "-p",
+   "-sl"
+  ],
+  "correctAnswers": [
+   0
+  ],
+  "lessonTheme": "起動・終了と起動オプション",
+  "explanation": "-e は実行完了後にWinActorを終了します。",
+  "wrongChoiceExplanations": {},
+  "domain": "overview",
+  "service": "起動オプション",
+  "difficulty": 1,
+  "tags": [
+   "ドリル"
+  ],
+  "beginnerNote": null
+ },
+ {
+  "id": "qd-ov-027",
+  "question": "【穴埋め】WinActor Ver.7のシナリオファイルの拡張子は（　）である。",
+  "choices": [
+   "ums7",
+   "ums5",
+   "wa7",
+   "scn"
+  ],
+  "correctAnswers": [
+   0
+  ],
+  "lessonTheme": "起動・終了と起動オプション",
+  "explanation": "Ver.7のシナリオファイルは .ums7 です。",
+  "wrongChoiceExplanations": {},
+  "domain": "overview",
+  "service": "シナリオファイル",
+  "difficulty": 1,
+  "tags": [
+   "ドリル"
+  ],
+  "beginnerNote": null
+ },
+ {
+  "id": "qd-ov-028",
+  "question": "【誤り探し】WinActorの起動に関する説明で誤っているものはどれ？",
+  "choices": [
+   "WinActorは何個でも同時に起動できる",
+   "2重起動はできない",
+   "最小化するとタスクトレイに入る",
+   "起動オプションを指定できる"
+  ],
+  "correctAnswers": [
+   0
+  ],
+  "lessonTheme": "起動・終了と起動オプション",
+  "explanation": "WinActorは2重起動できません。",
+  "wrongChoiceExplanations": {},
+  "domain": "overview",
+  "service": "2重起動",
+  "difficulty": 1,
+  "tags": [
+   "ドリル"
+  ],
+  "beginnerNote": null
+ },
+ {
+  "id": "qd-ov-029",
+  "question": "【シナリオ】評価ライセンスで作ったシナリオの試用期限を外したい。どうする？",
+  "choices": [
+   "フル機能版の製品ライセンスで保存し直す",
+   "実行版で開いて保存する",
+   "拡張子を変更する",
+   "変数を削除する"
+  ],
+  "correctAnswers": [
+   0
+  ],
+  "lessonTheme": "エディションとライセンス",
+  "explanation": "製品ライセンスが登録されたフル機能版で保存すると試用期限が外れます。",
+  "wrongChoiceExplanations": {},
+  "domain": "overview",
+  "service": "評価ライセンス",
+  "difficulty": 1,
+  "tags": [
+   "ドリル"
+  ],
+  "beginnerNote": null
+ },
+ {
+  "id": "qd-ov-030",
+  "question": "【用途】操作対象の画面をタイトルやプロセス名で特定する仕組みは？",
+  "choices": [
+   "ウィンドウ識別ルール",
+   "監視ルール",
+   "テキスト変換辞書",
+   "イメージ"
+  ],
+  "correctAnswers": [
+   0
+  ],
+  "lessonTheme": "画面構成と部品",
+  "explanation": "ウィンドウ識別ルールは画面の検索条件です。",
+  "wrongChoiceExplanations": {},
+  "domain": "overview",
+  "service": "ウィンドウ識別ルール",
+  "difficulty": 1,
+  "tags": [
+   "ドリル"
+  ],
+  "beginnerNote": null
+ },
+ {
+  "id": "qd-ov-031",
+  "question": "【誤り探し】WinActorの使用上の注意として誤っているものはどれ？",
+  "choices": [
+   "自動実行中もPCを自由に操作してよい",
+   "自動実行中の手動操作は予期せぬ動作の原因になる",
+   "対象システムに高い負荷をかける可能性がある",
+   "個人情報を記録する可能性があるため取扱いに注意する"
+  ],
+  "correctAnswers": [
+   0
+  ],
+  "lessonTheme": "RPAとWinActorの基礎",
+  "explanation": "自動実行中の手動操作は誤動作の原因になります。",
+  "wrongChoiceExplanations": {},
+  "domain": "overview",
+  "service": "使用上の注意",
+  "difficulty": 1,
+  "tags": [
+   "ドリル"
+  ],
+  "beginnerNote": null
+ }
+]

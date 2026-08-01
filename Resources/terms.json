@@ -464,5 +464,330 @@
   ],
   "domain": "features",
   "difficulty": 3
+ },
+ {
+  "id": "t-kirokumode",
+  "term": "記録モード",
+  "shortDescription": "見本操作を記録する方式。7種類ある",
+  "beginnerExplanation": "WinActorが操作を覚えるときのやり方の種類です。対象のウィンドウを指定すると、そのアプリに合ったモードが自動で選ばれます。",
+  "useCase": "記録前に対象ウィンドウをクリックして指定し、選ばれたモードを確認してから記録を始める。",
+  "examPoint": "イベント／エミュレーション／IE／Chrome／Firefox／Edge／UIオートメーションの7種類＋自動切り替え。",
+  "relatedServices": [
+   "記録モード"
+  ],
+  "domain": "features",
+  "difficulty": 2
+ },
+ {
+  "id": "t-eventmode",
+  "term": "イベントモード",
+  "shortDescription": "Windowsの信号を拾い、通し番号で部品を記録",
+  "beginnerExplanation": "Windowsが出す操作の合図（イベント）を見張って記録する方式です。ボタンや入力欄に番号を振って覚えます。",
+  "useCase": "Windows純正ライブラリで作られた業務アプリの入力やクリックを記録する。",
+  "examPoint": "記録できるのはWindows純正ライブラリ製アプリ。記録できないときはエミュレーションを使う。",
+  "relatedServices": [
+   "記録モード"
+  ],
+  "domain": "features",
+  "difficulty": 2
+ },
+ {
+  "id": "t-emulationmode",
+  "term": "エミュレーションモード",
+  "shortDescription": "マウス位置とキー操作をそのまま記録する座標指定型",
+  "beginnerExplanation": "マウスをどこでクリックしたか、どのキーを押したかを、そのまま覚える方式です。画面の大きさが変わるとずれます。",
+  "useCase": "他のモードで記録できないアプリや、スクリーン（デスクトップ）全体を対象に操作する。",
+  "examPoint": "唯一の座標指定型。操作記録リストから「選択部アクション化」で部品化し、「アクション化後停止」で終える。",
+  "relatedServices": [
+   "記録モード"
+  ],
+  "domain": "features",
+  "difficulty": 2
+ },
+ {
+  "id": "t-jidoukirikae",
+  "term": "自動切り替えモード",
+  "shortDescription": "記録中に対象ウィンドウを変えるとモードが自動で切り替わる",
+  "beginnerExplanation": "複数のアプリをまたいで操作を記録したいときに使うモードです。ウィンドウを切り替えると適したモードに変わります。",
+  "useCase": "Edge→電卓のように、複数のウィンドウにまたがる一連の操作をまとめて記録する。",
+  "examPoint": "エミュレーション記録中にアクション化せず切り替えると確認ダイアログが出る。",
+  "relatedServices": [
+   "記録モード"
+  ],
+  "domain": "features",
+  "difficulty": 3
+ },
+ {
+  "id": "t-uiinterface",
+  "term": "自動操作インターフェース",
+  "shortDescription": "UI識別型・画像識別型・座標指定型・ファイル向けの4分類",
+  "beginnerExplanation": "WinActorが「どうやって操作対象を見つけるか」の考え方の分類です。4つの当て方があります。",
+  "useCase": "対象アプリの性質に応じて、要素・画像・座標・ファイルのどれで操作するかを決める。",
+  "examPoint": "画像マッチングは記録モードではなくノード（画像識別型）である点が頻出。",
+  "relatedServices": [
+   "自動操作インターフェース"
+  ],
+  "domain": "overview",
+  "difficulty": 3
+ },
+ {
+  "id": "t-windowmachi",
+  "term": "ウィンドウ状態待機",
+  "shortDescription": "画面の状態変化を待つ／状態を取得するノード",
+  "beginnerExplanation": "「この画面が出るまで待つ」を実現する部品です。出たか出ていないかを変数で受け取れます。",
+  "useCase": "ボタンを押した後、次の画面が表示されるまで待ってから操作する。",
+  "examPoint": "画面の変化は6種類、待機種別は「状態取得のみ」「一定時間待つ」の2種類。結果はtrue/false。",
+  "relatedServices": [
+   "ウィンドウ状態待機"
+  ],
+  "domain": "features",
+  "difficulty": 3
+ },
+ {
+  "id": "t-shiteijikan",
+  "term": "指定時間待機",
+  "shortDescription": "時間または時刻まで待つ／時間帯を判定するノード",
+  "beginnerExplanation": "決めた時間だけ止まる、決めた時刻まで待つ、今が指定の時間帯かを調べる、の3通りに使えます。",
+  "useCase": "アプリの処理待ちで数秒止める。夜間だけ処理を実行する判定に使う。",
+  "examPoint": "待機時間はミリ秒指定で0～3,600,000。指定時間チェックは範囲内ならtrue。",
+  "relatedServices": [
+   "指定時間待機"
+  ],
+  "domain": "features",
+  "difficulty": 2
+ },
+ {
+  "id": "t-machibox",
+  "term": "待機ボックス",
+  "shortDescription": "処理を止めてメッセージを表示するノード",
+  "beginnerExplanation": "画面にメッセージを出して人の確認を待つ部品です。OKだけの型と、継続／停止を選ばせる型があります。",
+  "useCase": "手作業が必要な箇所で止める。%変数名%で変数の中身を表示して確認する。",
+  "examPoint": "「確認待ち」と「問い合わせ」の2タイプ。予期せぬ操作による一時停止の対象外。",
+  "relatedServices": [
+   "待機ボックス"
+  ],
+  "domain": "features",
+  "difficulty": 2
+ },
+ {
+  "id": "t-inputbox",
+  "term": "インプットボックス",
+  "shortDescription": "ユーザの入力を受け取り変数に格納するノード",
+  "beginnerExplanation": "実行中に人へ値を尋ねて、その答えを変数に入れる部品です。",
+  "useCase": "処理件数や対象日をその場で指定させる。",
+  "examPoint": "入力結果は指定した変数へ。選択肢から選ばせたい場合は選択ボックスを使う。",
+  "relatedServices": [
+   "インプットボックス"
+  ],
+  "domain": "features",
+  "difficulty": 2
+ },
+ {
+  "id": "t-tokushuhensu",
+  "term": "特殊変数",
+  "shortDescription": "あらかじめ用意された$で始まる変数",
+  "beginnerExplanation": "WinActorが最初から持っている特別な変数です。ループ回数やエラー情報などが入っています。",
+  "useCase": "$LOOP_NUMで現在のループ回数を判定する。$ERROR_MESSAGEでエラー内容を記録する。",
+  "examPoint": "同名の変数は作れない。ユーザは$で始まる変数名を付けられない。R/Wの区別に注意。",
+  "relatedServices": [
+   "特殊変数"
+  ],
+  "domain": "features",
+  "difficulty": 3
+ },
+ {
+  "id": "t-percentvar",
+  "term": "%変数名%",
+  "shortDescription": "文字列の中に変数の値を差し込む書き方",
+  "beginnerExplanation": "メッセージや値の入力欄に %変数名% と書くと、実行時にその変数の中身へ置き換わります。",
+  "useCase": "待機ボックスのメッセージに変数を埋め込んで、値を目視確認する。",
+  "examPoint": "利用できる箇所はシナリオ情報の設定（V6の挙動に合わせるか）で変わる。",
+  "relatedServices": [
+   "%変数名%"
+  ],
+  "domain": "features",
+  "difficulty": 2
+ },
+ {
+  "id": "t-loopexec",
+  "term": "ループ実行",
+  "shortDescription": "データ一覧と連携し、行数分シナリオを繰り返す実行方式",
+  "beginnerExplanation": "表の行の数だけ、シナリオ全体を繰り返し実行する仕組みです。",
+  "useCase": "大量データの一括投入。行ごとの結果をデータ一覧へ書き戻す。",
+  "examPoint": "開始時にデータ→変数、終了時に変数→データ一覧。Excelは実行中に閉じるとエラー。",
+  "relatedServices": [
+   "ループ実行"
+  ],
+  "domain": "scenario",
+  "difficulty": 3
+ },
+ {
+  "id": "t-bubunjikkou",
+  "term": "部分実行",
+  "shortDescription": "選択したノードだけを実行して確認する機能",
+  "beginnerExplanation": "作りかけのシナリオの一部だけを動かして確かめる機能です。",
+  "useCase": "新しく足したノードだけを試して、設定が正しいか確認する。",
+  "examPoint": "飛び飛び選択・未選択では選べない。実行版では利用不可。初期値が使われる。",
+  "relatedServices": [
+   "部分実行"
+  ],
+  "domain": "scenario",
+  "difficulty": 2
+ },
+ {
+  "id": "t-kokokara",
+  "term": "ここから実行",
+  "shortDescription": "選択したノード以降を実行する機能",
+  "beginnerExplanation": "途中から動かして確認したいときに使う機能です。",
+  "useCase": "エラーが起きた箇所から後ろだけを流して確認する。",
+  "examPoint": "選択できるのはノード1つのみ。繰り返し内では2周目が実行されない。",
+  "relatedServices": [
+   "ここから実行"
+  ],
+  "domain": "scenario",
+  "difficulty": 3
+ },
+ {
+  "id": "t-jikkouyokushi",
+  "term": "実行抑止",
+  "shortDescription": "指定したノードを実行せずスキップさせる設定",
+  "beginnerExplanation": "一時的に「この部品は動かさない」と決めておく設定です。",
+  "useCase": "検証中にメール送信ノードだけ止めておく。",
+  "examPoint": "右クリックメニューで設定。ブレイクポイント（実行前に一時停止）とは別物。",
+  "relatedServices": [
+   "実行抑止"
+  ],
+  "domain": "scenario",
+  "difficulty": 2
+ },
+ {
+  "id": "t-ukiflow",
+  "term": "浮きフロー",
+  "shortDescription": "開始～終了の外に置かれ、全体実行されないノード",
+  "beginnerExplanation": "シナリオの枠の外に置かれている部品のことです。全体実行しても動きません。",
+  "useCase": "使うか迷う処理を一時的に枠の外へ出しておく。",
+  "examPoint": "実行前の警告の原因になる。制御ノードのグループは全体で1つと数える。",
+  "relatedServices": [
+   "浮きフロー"
+  ],
+  "domain": "scenario",
+  "difficulty": 2
+ },
+ {
+  "id": "t-kanshirule",
+  "term": "監視ルール",
+  "shortDescription": "特定の画面が出たときの動作を決めておく仕組み",
+  "beginnerExplanation": "「このダイアログが出たらこうする」を先に決めておく仕組みです。",
+  "useCase": "パスワード入力画面が出たらブザーを鳴らして知らせる。",
+  "examPoint": "例外やサブルーチンに結び付ける。登録数が多いと実行速度が遅くなる。",
+  "relatedServices": [
+   "監視ルール"
+  ],
+  "domain": "scenario",
+  "difficulty": 3
+ },
+ {
+  "id": "t-windowrule",
+  "term": "ウィンドウ識別ルール",
+  "shortDescription": "操作対象の画面を特定するための検索条件",
+  "beginnerExplanation": "どのウィンドウを操作するかを決めるための条件です。名前を付けて管理します。",
+  "useCase": "タイトルが変わるアプリで、条件を「含む」に変えて安定させる。",
+  "examPoint": "条件はウィンドウタイトル・クラス名・プロセス名・ウィンドウサイズ。",
+  "relatedServices": [
+   "ウィンドウ識別ルール"
+  ],
+  "domain": "scenario",
+  "difficulty": 3
+ },
+ {
+  "id": "t-scenariopw",
+  "term": "シナリオパスワード",
+  "shortDescription": "編集・閲覧・実行を制限する3種類のパスワード",
+  "beginnerExplanation": "シナリオファイルに鍵をかけて、できることを制限する仕組みです。",
+  "useCase": "現場の端末では実行だけできるようにして、編集を防ぐ。",
+  "examPoint": "8～64文字。3種に同じパスワードは設定不可。入力内容でセキュリティモードが決まる。",
+  "relatedServices": [
+   "シナリオパスワード"
+  ],
+  "domain": "scenario",
+  "difficulty": 3
+ },
+ {
+  "id": "t-securitymode",
+  "term": "セキュリティモード",
+  "shortDescription": "編集／閲覧／実行の3つの動作モード",
+  "beginnerExplanation": "パスワードの入力内容によって切り替わる、できることの範囲です。",
+  "useCase": "閲覧モードで内容を確認しつつ、実行はできる状態にする。",
+  "examPoint": "閲覧モードは部分実行・ここから実行が不可。実行モードは実行系のタブのみ操作可。",
+  "relatedServices": [
+   "セキュリティモード"
+  ],
+  "domain": "scenario",
+  "difficulty": 3
+ },
+ {
+  "id": "t-kidouoption",
+  "term": "起動オプション",
+  "shortDescription": "コマンドラインからWinActorを制御する指定",
+  "beginnerExplanation": "WinActorを起動するときに付ける指示です。ファイルを開く、実行する、終了する等ができます。",
+  "useCase": "タスクスケジューラから -f と -r と -e を付けて無人実行する。",
+  "examPoint": "-f/-r/-d/-w/-x/-e/-ec/-t/-p/-od/-ou/-op/-ot/-sl/-sa。-ecは0/1のステータスを返す。",
+  "relatedServices": [
+   "起動オプション"
+  ],
+  "domain": "overview",
+  "difficulty": 3
+ },
+ {
+  "id": "t-ums7",
+  "term": "シナリオファイル（ums7）",
+  "shortDescription": "自動操作の手順を保存するファイル",
+  "beginnerExplanation": "作ったシナリオを保存したファイルです。拡張子はums7です。",
+  "useCase": "作成したシナリオを保存し、実行版の端末へ配って動かす。",
+  "examPoint": "フローチャートのほか変数・監視ルール・ウィンドウ識別ルール・イメージ画像も保存される。",
+  "relatedServices": [
+   "シナリオファイル"
+  ],
+  "domain": "overview",
+  "difficulty": 1
+ },
+ {
+  "id": "t-filepath",
+  "term": "ファイルパス",
+  "shortDescription": "ローカル・UNC・http/httpsの3種類",
+  "beginnerExplanation": "ファイルの場所の書き方です。相対パスが使えるのはローカルパスだけです。",
+  "useCase": "共有サーバ上のExcelをUNCパスで指定する。",
+  "examPoint": "基準パスの優先順位はシナリオパス→WinActorパス→インストールパス。",
+  "relatedServices": [
+   "ファイルパス"
+  ],
+  "domain": "scenario",
+  "difficulty": 3
+ },
+ {
+  "id": "t-kanrijikkou",
+  "term": "管理実行版",
+  "shortDescription": "管理サーバの指示で実行する専用ライセンス",
+  "beginnerExplanation": "サーバからの指示で動かすための版です。記録も編集もできません。",
+  "useCase": "多数の端末のロボットをサーバから一括で動かす。",
+  "examPoint": "フローティングライセンスのみ。ノードロックは管理実行モード設定で同等になる。",
+  "relatedServices": [
+   "ライセンス種別"
+  ],
+  "domain": "overview",
+  "difficulty": 3
+ },
+ {
+  "id": "t-jokenshiki",
+  "term": "条件式",
+  "shortDescription": "分岐や繰り返しの判定に使う式",
+  "beginnerExplanation": "「この値がこうなら」を決める式です。文字列用と数値用で演算子が違います。",
+  "useCase": "金額が10,000以上のときだけ登録処理へ進める。",
+  "examPoint": "文字列は「等しい／等しくない」、数値は「＝≠＞＜≧≦」。曖昧一致と正規表現もある。",
+  "relatedServices": [
+   "条件式"
+  ],
+  "domain": "scenario",
+  "difficulty": 2
  }
 ]

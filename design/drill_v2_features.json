@@ -1,0 +1,508 @@
+[
+ {
+  "id": "qd-ft-025",
+  "question": "【穴埋め】記録モードは全部で（　）種類あり、別に自動切り替えがある。",
+  "choices": [
+   "7",
+   "3",
+   "5",
+   "10"
+  ],
+  "correctAnswers": [
+   0
+  ],
+  "lessonTheme": "自動記録と操作の記録方式",
+  "explanation": "イベント/エミュレーション/IE/Chrome/Firefox/Edge/UIオートメーションの7種類です。",
+  "wrongChoiceExplanations": {},
+  "domain": "features",
+  "service": "記録モード",
+  "difficulty": 1,
+  "tags": [
+   "ドリル"
+  ],
+  "beginnerNote": null
+ },
+ {
+  "id": "qd-ft-026",
+  "question": "【用途】Edge(Chromium)のIEモードを対象とする記録モードは？",
+  "choices": [
+   "IEモード",
+   "Edgeモード",
+   "イベントモード",
+   "自動切り替え"
+  ],
+  "correctAnswers": [
+   0
+  ],
+  "lessonTheme": "自動記録と操作の記録方式",
+  "explanation": "WinActorのIEモードはEdgeのIEモード向けです。",
+  "wrongChoiceExplanations": {},
+  "domain": "features",
+  "service": "記録モード",
+  "difficulty": 1,
+  "tags": [
+   "ドリル"
+  ],
+  "beginnerNote": null
+ },
+ {
+  "id": "qd-ft-027",
+  "question": "【シナリオ】エミュレーション記録で拾った操作を部品にしたい。押すボタンは？",
+  "choices": [
+   "選択部アクション化",
+   "選択部削除",
+   "記録停止",
+   "更新"
+  ],
+  "correctAnswers": [
+   0
+  ],
+  "lessonTheme": "自動記録と操作の記録方式",
+  "explanation": "「選択部アクション化」でフローチャートへ追加されます。",
+  "wrongChoiceExplanations": {},
+  "domain": "features",
+  "service": "エミュレーション",
+  "difficulty": 1,
+  "tags": [
+   "ドリル"
+  ],
+  "beginnerNote": null
+ },
+ {
+  "id": "qd-ft-028",
+  "question": "【誤り探し】操作が記録できない原因として当てはまらないものはどれ？",
+  "choices": [
+   "ウィンドウが最大化されている",
+   "対象アプリが管理者権限で起動している",
+   "対象アプリの保護モードが有効",
+   "Javaやリモートデスクトップの画面である"
+  ],
+  "correctAnswers": [
+   0
+  ],
+  "lessonTheme": "自動記録と操作の記録方式",
+  "explanation": "最大化は記録可否と関係ありません。",
+  "wrongChoiceExplanations": {},
+  "domain": "features",
+  "service": "記録できない場合",
+  "difficulty": 1,
+  "tags": [
+   "ドリル"
+  ],
+  "beginnerNote": null
+ },
+ {
+  "id": "qd-ft-029",
+  "question": "【用途】3つ以上の枝から1つを選んで実行するノードは？",
+  "choices": [
+   "多分岐",
+   "分岐",
+   "グループ",
+   "例外処理"
+  ],
+  "correctAnswers": [
+   0
+  ],
+  "lessonTheme": "主要ノード",
+  "explanation": "分岐は2方向、多分岐は3方向以上です。",
+  "wrongChoiceExplanations": {},
+  "domain": "features",
+  "service": "多分岐",
+  "difficulty": 1,
+  "tags": [
+   "ドリル"
+  ],
+  "beginnerNote": null
+ },
+ {
+  "id": "qd-ft-030",
+  "question": "【穴埋め】繰り返しから抜けたい場所に置くノードは（　）である。",
+  "choices": [
+   "繰り返し終了",
+   "次の条件判定",
+   "サブルーチン終了",
+   "シナリオ終了"
+  ],
+  "correctAnswers": [
+   0
+  ],
+  "lessonTheme": "主要ノード",
+  "explanation": "繰り返し終了はbreakに相当します。",
+  "wrongChoiceExplanations": {},
+  "domain": "features",
+  "service": "繰り返し終了",
+  "difficulty": 1,
+  "tags": [
+   "ドリル"
+  ],
+  "beginnerNote": null
+ },
+ {
+  "id": "qd-ft-031",
+  "question": "【用途】以降の処理を飛ばして繰り返しの条件判定へ進むノードは？",
+  "choices": [
+   "次の条件判定",
+   "繰り返し終了",
+   "分岐",
+   "待機ボックス"
+  ],
+  "correctAnswers": [
+   0
+  ],
+  "lessonTheme": "主要ノード",
+  "explanation": "次の条件判定はcontinueに相当します。",
+  "wrongChoiceExplanations": {},
+  "domain": "features",
+  "service": "次の条件判定",
+  "difficulty": 1,
+  "tags": [
+   "ドリル"
+  ],
+  "beginnerNote": null
+ },
+ {
+  "id": "qd-ft-032",
+  "question": "【説明】『エラー時に異常系へジャンプさせる』ノードはどれ？",
+  "choices": [
+   "例外処理",
+   "監視ルール一覧",
+   "ブレイクポイント",
+   "実行抑止"
+  ],
+  "correctAnswers": [
+   0
+  ],
+  "lessonTheme": "主要ノード",
+  "explanation": "例外処理はtry・catchに相当します。",
+  "wrongChoiceExplanations": {},
+  "domain": "features",
+  "service": "例外処理",
+  "difficulty": 1,
+  "tags": [
+   "ドリル"
+  ],
+  "beginnerNote": null
+ },
+ {
+  "id": "qd-ft-033",
+  "question": "【シナリオ】対象画面が表示されるまで待ちたい。使うノードは？",
+  "choices": [
+   "ウィンドウ状態待機",
+   "指定時間待機",
+   "待機ボックス",
+   "音"
+  ],
+  "correctAnswers": [
+   0
+  ],
+  "lessonTheme": "アクションカテゴリのノード",
+  "explanation": "画面の状態変化を待つのはウィンドウ状態待機です。",
+  "wrongChoiceExplanations": {},
+  "domain": "features",
+  "service": "ウィンドウ状態待機",
+  "difficulty": 1,
+  "tags": [
+   "ドリル"
+  ],
+  "beginnerNote": null
+ },
+ {
+  "id": "qd-ft-034",
+  "question": "【穴埋め】指定時間待機の待機時間の単位は（　）である。",
+  "choices": [
+   "ミリ秒",
+   "秒",
+   "分",
+   "時間"
+  ],
+  "correctAnswers": [
+   0
+  ],
+  "lessonTheme": "アクションカテゴリのノード",
+  "explanation": "0～3,600,000ミリ秒の範囲で指定します。",
+  "wrongChoiceExplanations": {},
+  "domain": "features",
+  "service": "指定時間待機",
+  "difficulty": 1,
+  "tags": [
+   "ドリル"
+  ],
+  "beginnerNote": null
+ },
+ {
+  "id": "qd-ft-035",
+  "question": "【用途】Excelのセルの値を変数に入れる機能を持つノードは？",
+  "choices": [
+   "Excel操作",
+   "クリップボード",
+   "コマンド実行",
+   "文字列送信"
+  ],
+  "correctAnswers": [
+   0
+  ],
+  "lessonTheme": "アクションカテゴリのノード",
+  "explanation": "Excel操作は値の取得・値の設定・マクロ実行の3機能です。",
+  "wrongChoiceExplanations": {},
+  "domain": "features",
+  "service": "Excel操作",
+  "difficulty": 1,
+  "tags": [
+   "ドリル"
+  ],
+  "beginnerNote": null
+ },
+ {
+  "id": "qd-ft-036",
+  "question": "【シナリオ】dirコマンドを実行したい。コマンド欄に指定するのは？",
+  "choices": [
+   "cmd.exe",
+   "dir",
+   "command.exe",
+   "powershell"
+  ],
+  "correctAnswers": [
+   0
+  ],
+  "lessonTheme": "アクションカテゴリのノード",
+  "explanation": "内部コマンドはcmd.exeとオプション /c dir で実行します。",
+  "wrongChoiceExplanations": {},
+  "domain": "features",
+  "service": "コマンド実行",
+  "difficulty": 1,
+  "tags": [
+   "ドリル"
+  ],
+  "beginnerNote": null
+ },
+ {
+  "id": "qd-ft-037",
+  "question": "【穴埋め】スクリプト実行ノードで実行できるのは（　）である。",
+  "choices": [
+   "VBScript",
+   "JavaScript",
+   "Python",
+   "PowerShell"
+  ],
+  "correctAnswers": [
+   0
+  ],
+  "lessonTheme": "アクションカテゴリのノード",
+  "explanation": "PythonはPython実行ノードを使います。",
+  "wrongChoiceExplanations": {},
+  "domain": "features",
+  "service": "スクリプト実行",
+  "difficulty": 1,
+  "tags": [
+   "ドリル"
+  ],
+  "beginnerNote": null
+ },
+ {
+  "id": "qd-ft-038",
+  "question": "【用途】メッセージを表示して継続か停止かを選ばせるノードは？",
+  "choices": [
+   "待機ボックス",
+   "インプットボックス",
+   "選択ボックス",
+   "音"
+  ],
+  "correctAnswers": [
+   0
+  ],
+  "lessonTheme": "ユーザ・変数カテゴリのノード",
+  "explanation": "待機ボックスには確認待ちと問い合わせの2タイプがあります。",
+  "wrongChoiceExplanations": {},
+  "domain": "features",
+  "service": "待機ボックス",
+  "difficulty": 1,
+  "tags": [
+   "ドリル"
+  ],
+  "beginnerNote": null
+ },
+ {
+  "id": "qd-ft-039",
+  "question": "【シナリオ】実行時にユーザへ件数を入力させたい。使うノードは？",
+  "choices": [
+   "インプットボックス",
+   "待機ボックス",
+   "選択ボックス",
+   "変数値設定"
+  ],
+  "correctAnswers": [
+   0
+  ],
+  "lessonTheme": "ユーザ・変数カテゴリのノード",
+  "explanation": "入力値は指定した変数に格納されます。",
+  "wrongChoiceExplanations": {},
+  "domain": "features",
+  "service": "インプットボックス",
+  "difficulty": 1,
+  "tags": [
+   "ドリル"
+  ],
+  "beginnerNote": null
+ },
+ {
+  "id": "qd-ft-040",
+  "question": "【誤り探し】四則演算ノードの説明で誤っているものはどれ？",
+  "choices": [
+   "計算結果は必ず整数になる",
+   "演算子は＋－×÷から選ぶ",
+   "結果は変数に格納する",
+   "小数点以下を切り捨てる設定がある"
+  ],
+  "correctAnswers": [
+   0
+  ],
+  "lessonTheme": "ユーザ・変数カテゴリのノード",
+  "explanation": "整数どうしの割り算でも割り切れなければ小数になります。",
+  "wrongChoiceExplanations": {},
+  "domain": "features",
+  "service": "四則演算",
+  "difficulty": 1,
+  "tags": [
+   "ドリル"
+  ],
+  "beginnerNote": null
+ },
+ {
+  "id": "qd-ft-041",
+  "question": "【穴埋め】カウントアップの加算値は整数で1～（　）の範囲。",
+  "choices": [
+   "999,999",
+   "100",
+   "1,000",
+   "9,999"
+  ],
+  "correctAnswers": [
+   0
+  ],
+  "lessonTheme": "ユーザ・変数カテゴリのノード",
+  "explanation": "加算値は1～999,999の整数です。",
+  "wrongChoiceExplanations": {},
+  "domain": "features",
+  "service": "カウントアップ",
+  "difficulty": 1,
+  "tags": [
+   "ドリル"
+  ],
+  "beginnerNote": null
+ },
+ {
+  "id": "qd-ft-042",
+  "question": "【穴埋め】変数が保持できるのは既定で（　）文字までである。",
+  "choices": [
+   "1024",
+   "255",
+   "512",
+   "4096"
+  ],
+  "correctAnswers": [
+   0
+  ],
+  "lessonTheme": "変数・データ一覧・ライブラリ",
+  "explanation": "255文字は変数名・コメントの上限です。",
+  "wrongChoiceExplanations": {},
+  "domain": "features",
+  "service": "変数の制限",
+  "difficulty": 1,
+  "tags": [
+   "ドリル"
+  ],
+  "beginnerNote": null
+ },
+ {
+  "id": "qd-ft-043",
+  "question": "【用途】現在のループ回数を表す特殊変数は？",
+  "choices": [
+   "$LOOP_NUM",
+   "$LOOP_MAX",
+   "$ELAPSED_TIME",
+   "$OS_BIT"
+  ],
+  "correctAnswers": [
+   0
+  ],
+  "lessonTheme": "変数・データ一覧・ライブラリ",
+  "explanation": "$LOOP_NUMは1から始まる現在の実行回数です。",
+  "wrongChoiceExplanations": {},
+  "domain": "features",
+  "service": "特殊変数",
+  "difficulty": 1,
+  "tags": [
+   "ドリル"
+  ],
+  "beginnerNote": null
+ },
+ {
+  "id": "qd-ft-044",
+  "question": "【シナリオ】投入データのExcelから変数名をまとめて登録したい。使う機能は？",
+  "choices": [
+   "変数名インポート",
+   "雛形ファイル作成",
+   "変数マージ",
+   "データエクスポート"
+  ],
+  "correctAnswers": [
+   0
+  ],
+  "lessonTheme": "変数・データ一覧・ライブラリ",
+  "explanation": "1行目の項目名が変数名として取り込まれます。",
+  "wrongChoiceExplanations": {},
+  "domain": "features",
+  "service": "変数名インポート",
+  "difficulty": 1,
+  "tags": [
+   "ドリル"
+  ],
+  "beginnerNote": null
+ },
+ {
+  "id": "qd-ft-045",
+  "question": "【誤り探し】データインポートの説明で誤っているものはどれ？",
+  "choices": [
+   "実行中でもいつでも実行できる",
+   "csv・xls・xlsx・xlsmに対応する",
+   "読み込んだ内容はデータ一覧に表示される",
+   "実行待ち状態のときのみ選択できる"
+  ],
+  "correctAnswers": [
+   0
+  ],
+  "lessonTheme": "変数・データ一覧・ライブラリ",
+  "explanation": "実行中・一時停止中・記録中は選択できません。",
+  "wrongChoiceExplanations": {},
+  "domain": "features",
+  "service": "データインポート",
+  "difficulty": 1,
+  "tags": [
+   "ドリル"
+  ],
+  "beginnerNote": null
+ },
+ {
+  "id": "qd-ft-046",
+  "question": "【穴埋め】表示メッセージ内で変数の値を差し込む書き方は（　）である。",
+  "choices": [
+   "%変数名%",
+   "$変数名$",
+   "#変数名#",
+   "{変数名}"
+  ],
+  "correctAnswers": [
+   0
+  ],
+  "lessonTheme": "変数・データ一覧・ライブラリ",
+  "explanation": "実行時に変数の現在値へ置き換わります。",
+  "wrongChoiceExplanations": {},
+  "domain": "features",
+  "service": "%変数名%",
+  "difficulty": 1,
+  "tags": [
+   "ドリル"
+  ],
+  "beginnerNote": null
+ }
+]

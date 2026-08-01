@@ -1,0 +1,508 @@
+[
+ {
+  "id": "qd-sc-025",
+  "question": "【誤り探し】シナリオの実行順序の説明で誤っているものはどれ？",
+  "choices": [
+   "ノードIDの小さい順に実行される",
+   "開始から矢印の順に実行される",
+   "終了で処理が終わる",
+   "浮きフローは全体実行の対象外"
+  ],
+  "correctAnswers": [
+   0
+  ],
+  "lessonTheme": "シナリオ作成の基本",
+  "explanation": "実行順は矢印のつながりで決まります。",
+  "wrongChoiceExplanations": {},
+  "domain": "scenario",
+  "service": "シナリオの構造",
+  "difficulty": 1,
+  "tags": [
+   "ドリル"
+  ],
+  "beginnerNote": null
+ },
+ {
+  "id": "qd-sc-026",
+  "question": "【穴埋め】全体実行のショートカットキーは（　）である。",
+  "choices": [
+   "F5",
+   "F1",
+   "F2",
+   "F9"
+  ],
+  "correctAnswers": [
+   0
+  ],
+  "lessonTheme": "実行方式とループ実行",
+  "explanation": "実行ボタンのクリックでも全体実行できます。",
+  "wrongChoiceExplanations": {},
+  "domain": "scenario",
+  "service": "全体実行",
+  "difficulty": 1,
+  "tags": [
+   "ドリル"
+  ],
+  "beginnerNote": null
+ },
+ {
+  "id": "qd-sc-027",
+  "question": "【シナリオ】連続する数ノードだけ動かして確認したい。使うのは？",
+  "choices": [
+   "部分実行",
+   "ここから実行",
+   "全体実行",
+   "ステップ実行"
+  ],
+  "correctAnswers": [
+   0
+  ],
+  "lessonTheme": "実行方式とループ実行",
+  "explanation": "飛び飛びの選択では部分実行できません。",
+  "wrongChoiceExplanations": {},
+  "domain": "scenario",
+  "service": "部分実行",
+  "difficulty": 1,
+  "tags": [
+   "ドリル"
+  ],
+  "beginnerNote": null
+ },
+ {
+  "id": "qd-sc-028",
+  "question": "【用途】選択したノード以降を実行する機能は？",
+  "choices": [
+   "ここから実行",
+   "部分実行",
+   "実行抑止",
+   "スロー実行"
+  ],
+  "correctAnswers": [
+   0
+  ],
+  "lessonTheme": "実行方式とループ実行",
+  "explanation": "ここから実行は1つのノードを選んで使います。",
+  "wrongChoiceExplanations": {},
+  "domain": "scenario",
+  "service": "ここから実行",
+  "difficulty": 1,
+  "tags": [
+   "ドリル"
+  ],
+  "beginnerNote": null
+ },
+ {
+  "id": "qd-sc-029",
+  "question": "【誤り探し】部分実行・ここから実行の説明で誤っているものはどれ？",
+  "choices": [
+   "データインポートで読み込んだ値が使われる",
+   "変数の初期値が使われる",
+   "右クリックメニューから選ぶ",
+   "実行版では使えない"
+  ],
+  "correctAnswers": [
+   0
+  ],
+  "lessonTheme": "実行方式とループ実行",
+  "explanation": "外部ファイルの値ではなく初期値が使われます。",
+  "wrongChoiceExplanations": {},
+  "domain": "scenario",
+  "service": "部分実行",
+  "difficulty": 1,
+  "tags": [
+   "ドリル"
+  ],
+  "beginnerNote": null
+ },
+ {
+  "id": "qd-sc-030",
+  "question": "【説明】『データ一覧の1行につきシナリオを1回実行する』機能はどれ？",
+  "choices": [
+   "ループ実行",
+   "部分実行",
+   "全体実行",
+   "ステップ実行"
+  ],
+  "correctAnswers": [
+   0
+  ],
+  "lessonTheme": "実行方式とループ実行",
+  "explanation": "行数分シナリオが繰り返されます。",
+  "wrongChoiceExplanations": {},
+  "domain": "scenario",
+  "service": "ループ実行",
+  "difficulty": 1,
+  "tags": [
+   "ドリル"
+  ],
+  "beginnerNote": null
+ },
+ {
+  "id": "qd-sc-031",
+  "question": "【誤り探し】ループ実行の注意点で誤っているものはどれ？",
+  "choices": [
+   "実行中はExcelを閉じておく必要がある",
+   "実行が終わる前にExcelを閉じるとエラーになる",
+   "実行が終わった行はチェックが外れる",
+   "CSVはメモリ上で扱われる"
+  ],
+  "correctAnswers": [
+   0
+  ],
+  "lessonTheme": "実行方式とループ実行",
+  "explanation": "Excelは起動したままにしておきます。",
+  "wrongChoiceExplanations": {},
+  "domain": "scenario",
+  "service": "ループ実行",
+  "difficulty": 1,
+  "tags": [
+   "ドリル"
+  ],
+  "beginnerNote": null
+ },
+ {
+  "id": "qd-sc-032",
+  "question": "【穴埋め】文字列が等しいかを比べる比較演算子は「（　）」である。",
+  "choices": [
+   "等しい",
+   "＝",
+   "≧",
+   "がtrue"
+  ],
+  "correctAnswers": [
+   0
+  ],
+  "lessonTheme": "分岐・繰り返しの組み立て",
+  "explanation": "「＝」は数値としての比較です。",
+  "wrongChoiceExplanations": {},
+  "domain": "scenario",
+  "service": "条件式",
+  "difficulty": 1,
+  "tags": [
+   "ドリル"
+  ],
+  "beginnerNote": null
+ },
+ {
+  "id": "qd-sc-033",
+  "question": "【用途】全角/半角や大文字/小文字の違いを無視して比較する演算子は？",
+  "choices": [
+   "等しい（曖昧）",
+   "等しい",
+   "正規表現",
+   "がfalse"
+  ],
+  "correctAnswers": [
+   0
+  ],
+  "lessonTheme": "分岐・繰り返しの組み立て",
+  "explanation": "表記ゆれを吸収して判定します。",
+  "wrongChoiceExplanations": {},
+  "domain": "scenario",
+  "service": "条件式",
+  "difficulty": 1,
+  "tags": [
+   "ドリル"
+  ],
+  "beginnerNote": null
+ },
+ {
+  "id": "qd-sc-034",
+  "question": "【穴埋め】複合条件で使える論理演算子はAND・OR・（　）である。",
+  "choices": [
+   "NOT",
+   "XOR",
+   "NAND",
+   "IF"
+  ],
+  "correctAnswers": [
+   0
+  ],
+  "lessonTheme": "分岐・繰り返しの組み立て",
+  "explanation": "AND・OR・NOTの3つです。",
+  "wrongChoiceExplanations": {},
+  "domain": "scenario",
+  "service": "条件式",
+  "difficulty": 1,
+  "tags": [
+   "ドリル"
+  ],
+  "beginnerNote": null
+ },
+ {
+  "id": "qd-sc-035",
+  "question": "【シナリオ】CSVの行数だけ処理を回したい。判定条件で選ぶのは？",
+  "choices": [
+   "データ数",
+   "回数",
+   "範囲",
+   "条件式"
+  ],
+  "correctAnswers": [
+   0
+  ],
+  "lessonTheme": "分岐・繰り返しの組み立て",
+  "explanation": "データ数はExcelやCSVの行数分繰り返します。",
+  "wrongChoiceExplanations": {},
+  "domain": "scenario",
+  "service": "繰り返し",
+  "difficulty": 1,
+  "tags": [
+   "ドリル"
+  ],
+  "beginnerNote": null
+ },
+ {
+  "id": "qd-sc-036",
+  "question": "【穴埋め】繰り返しのカウンタ変数は（　）から始まり1ずつ加算される。",
+  "choices": [
+   "1",
+   "0",
+   "-1",
+   "指定値"
+  ],
+  "correctAnswers": [
+   0
+  ],
+  "lessonTheme": "分岐・繰り返しの組み立て",
+  "explanation": "最初の処理でカウンタに1が設定されます。",
+  "wrongChoiceExplanations": {},
+  "domain": "scenario",
+  "service": "繰り返し",
+  "difficulty": 1,
+  "tags": [
+   "ドリル"
+  ],
+  "beginnerNote": null
+ },
+ {
+  "id": "qd-sc-037",
+  "question": "【用途】指定ノードの実行前で一時停止させるデバッグ機能は？",
+  "choices": [
+   "ブレイクポイント",
+   "実行抑止",
+   "浮きフロー",
+   "付箋"
+  ],
+  "correctAnswers": [
+   0
+  ],
+  "lessonTheme": "デバッグ・例外処理・保守",
+  "explanation": "ブレイクポイント一覧タブで管理できます。",
+  "wrongChoiceExplanations": {},
+  "domain": "scenario",
+  "service": "ブレイクポイント",
+  "difficulty": 1,
+  "tags": [
+   "ドリル"
+  ],
+  "beginnerNote": null
+ },
+ {
+  "id": "qd-sc-038",
+  "question": "【用途】特定のノードを実行せずスキップさせる設定は？",
+  "choices": [
+   "実行抑止",
+   "ブレイクポイント",
+   "グループ化",
+   "ノード整列"
+  ],
+  "correctAnswers": [
+   0
+  ],
+  "lessonTheme": "デバッグ・例外処理・保守",
+  "explanation": "右クリックメニューから設定します。",
+  "wrongChoiceExplanations": {},
+  "domain": "scenario",
+  "service": "実行抑止",
+  "difficulty": 1,
+  "tags": [
+   "ドリル"
+  ],
+  "beginnerNote": null
+ },
+ {
+  "id": "qd-sc-039",
+  "question": "【シナリオ】画面表示が遅くて操作に失敗する。まず入れるべきものは？",
+  "choices": [
+   "ウィンドウ状態待機や指定時間待機",
+   "画像マッチング",
+   "音ノード",
+   "付箋"
+  ],
+  "correctAnswers": [
+   0
+  ],
+  "lessonTheme": "デバッグ・例外処理・保守",
+  "explanation": "表示を待ってから操作するのが基本です。",
+  "wrongChoiceExplanations": {},
+  "domain": "scenario",
+  "service": "実行時エラー",
+  "difficulty": 1,
+  "tags": [
+   "ドリル"
+  ],
+  "beginnerNote": null
+ },
+ {
+  "id": "qd-sc-040",
+  "question": "【シナリオ】起動ごとにウィンドウタイトルが変わるアプリで失敗する。対処は？",
+  "choices": [
+   "識別条件を「含む」に変える",
+   "マッチ率を上げる",
+   "実行速度を上げる",
+   "変数を削除する"
+  ],
+  "correctAnswers": [
+   0
+  ],
+  "lessonTheme": "デバッグ・例外処理・保守",
+  "explanation": "「～と一致する」を「～を含む」に緩めます。",
+  "wrongChoiceExplanations": {},
+  "domain": "scenario",
+  "service": "ウィンドウ識別ルール",
+  "difficulty": 1,
+  "tags": [
+   "ドリル"
+  ],
+  "beginnerNote": null
+ },
+ {
+  "id": "qd-sc-041",
+  "question": "【穴埋め】シナリオパスワードは編集・閲覧・（　）の3種類である。",
+  "choices": [
+   "実行",
+   "保存",
+   "印刷",
+   "共有"
+  ],
+  "correctAnswers": [
+   0
+  ],
+  "lessonTheme": "セキュリティとファイルパス",
+  "explanation": "3つとも同じパスワードにはできません。",
+  "wrongChoiceExplanations": {},
+  "domain": "scenario",
+  "service": "シナリオパスワード",
+  "difficulty": 1,
+  "tags": [
+   "ドリル"
+  ],
+  "beginnerNote": null
+ },
+ {
+  "id": "qd-sc-042",
+  "question": "【用途】閲覧と実行はできるが記録・編集・保存ができないモードは？",
+  "choices": [
+   "シナリオ閲覧モード",
+   "シナリオ編集モード",
+   "シナリオ実行モード",
+   "管理実行モード"
+  ],
+  "correctAnswers": [
+   0
+  ],
+  "lessonTheme": "セキュリティとファイルパス",
+  "explanation": "閲覧モードでは部分実行やここから実行もできません。",
+  "wrongChoiceExplanations": {},
+  "domain": "scenario",
+  "service": "セキュリティモード",
+  "difficulty": 1,
+  "tags": [
+   "ドリル"
+  ],
+  "beginnerNote": null
+ },
+ {
+  "id": "qd-sc-043",
+  "question": "【穴埋め】WinActorで相対パスが使えるのは（　）だけである。",
+  "choices": [
+   "ローカルパス",
+   "UNCパス",
+   "http/httpsのURI",
+   "すべてのパス"
+  ],
+  "correctAnswers": [
+   0
+  ],
+  "lessonTheme": "セキュリティとファイルパス",
+  "explanation": "UNCパスとURIでは相対パスを使えません。",
+  "wrongChoiceExplanations": {},
+  "domain": "scenario",
+  "service": "ファイルパス",
+  "difficulty": 1,
+  "tags": [
+   "ドリル"
+  ],
+  "beginnerNote": null
+ },
+ {
+  "id": "qd-sc-044",
+  "question": "【用途】相対パス補完で最優先される基準パスは？",
+  "choices": [
+   "シナリオパス",
+   "WinActorパス",
+   "インストールパス",
+   "デスクトップ"
+  ],
+  "correctAnswers": [
+   0
+  ],
+  "lessonTheme": "セキュリティとファイルパス",
+  "explanation": "シナリオパス→WinActorパス→インストールパスの順です。",
+  "wrongChoiceExplanations": {},
+  "domain": "scenario",
+  "service": "基準パス",
+  "difficulty": 1,
+  "tags": [
+   "ドリル"
+  ],
+  "beginnerNote": null
+ },
+ {
+  "id": "qd-sc-045",
+  "question": "【誤り探し】監視ルールの説明で誤っているものはどれ？",
+  "choices": [
+   "登録数を増やすほど実行が速くなる",
+   "特定画面が出たときの動作を決められる",
+   "サブルーチンや例外に結び付けられる",
+   "監視ルール一覧タブで登録する"
+  ],
+  "correctAnswers": [
+   0
+  ],
+  "lessonTheme": "デバッグ・例外処理・保守",
+  "explanation": "登録数が多いと実行速度は遅くなります。",
+  "wrongChoiceExplanations": {},
+  "domain": "scenario",
+  "service": "監視ルール",
+  "difficulty": 1,
+  "tags": [
+   "ドリル"
+  ],
+  "beginnerNote": null
+ },
+ {
+  "id": "qd-sc-046",
+  "question": "【穴埋め】シナリオ情報の備考欄の文字数制限は（　）文字である。",
+  "choices": [
+   "1,000",
+   "255",
+   "1,024",
+   "500"
+  ],
+  "correctAnswers": [
+   0
+  ],
+  "lessonTheme": "シナリオ作成の基本",
+  "explanation": "備考は1,000文字までです。",
+  "wrongChoiceExplanations": {},
+  "domain": "scenario",
+  "service": "シナリオ情報",
+  "difficulty": 1,
+  "tags": [
+   "ドリル"
+  ],
+  "beginnerNote": null
+ }
+]

@@ -1,17 +1,347 @@
 [
- {"id":"qd-ov-001","question":"【用途】定型的なPC操作をソフトのロボットに代行させて自動化する仕組みはどれ？","choices":["RPA","OCR","VPN","CAD"],"correctAnswers":[0],"lessonTheme":"RPAとWinActorの基礎","explanation":"定型操作を自動化する仕組みがRPA（Robotic Process Automation）です。","wrongChoiceExplanations":{},"domain":"overview","service":"RPAとは","difficulty":1,"tags":["ドリル"],"beginnerNote":null},
- {"id":"qd-ov-002","question":"【説明】『NTTデータ製の純国産RPAツールで日本語で操作できる』が指すものはどれ？","choices":["WinActor","Excel","Windows","Chrome"],"correctAnswers":[0],"lessonTheme":"RPAとWinActorの基礎","explanation":"純国産・日本語対応のRPAツールはWinActorです。","wrongChoiceExplanations":{},"domain":"overview","service":"WinActorとは","difficulty":1,"tags":["ドリル"],"beginnerNote":null},
- {"id":"qd-ov-003","question":"【穴埋め】RPAの自動化レベルで、定型業務を自動化する段階は（　）である。","choices":["クラス1（RPA）","クラス2（EPA）","クラス3（CA）","クラス4"],"correctAnswers":[0],"lessonTheme":"RPAとWinActorの基礎","explanation":"クラス1がRPA（定型）、クラス2がEPA（AI併用）、クラス3がCA（自律化）です。","wrongChoiceExplanations":{},"domain":"overview","service":"RPAの三段階(クラス)","difficulty":2,"tags":["ドリル"],"beginnerNote":null},
- {"id":"qd-ov-004","question":"【シナリオ】毎日同じ手順の請求データ転記を自動化したい。適したツールはどれ？","choices":["WinActorでシナリオ化","手作業を続ける","電卓で計算","紙に転記"],"correctAnswers":[0],"lessonTheme":"RPAとWinActorの基礎","explanation":"手順が定まった繰り返し作業はWinActorでの自動化に向きます。","wrongChoiceExplanations":{},"domain":"overview","service":"RPAの適用業務","difficulty":1,"tags":["ドリル"],"beginnerNote":null},
- {"id":"qd-ov-005","question":"【誤り探し】RPAの説明として誤っているものはどれ？","choices":["人の代わりに経営判断を下すのが本来の役割","定型作業を正確・高速に代行する","複数アプリをまたいで操作できる","ソフトウェアのロボットである"],"correctAnswers":[0],"lessonTheme":"RPAとWinActorの基礎","explanation":"経営判断のような非定型の意思決定はRPA本来の役割ではありません。","wrongChoiceExplanations":{},"domain":"overview","service":"RPAとマクロの違い","difficulty":2,"tags":["ドリル"],"beginnerNote":null},
- {"id":"qd-ov-006","question":"【用途】シナリオの作成・編集・実行のすべてが行えるエディションはどれ？","choices":["フル機能版","実行版","評価版のみ","管理版"],"correctAnswers":[0],"lessonTheme":"エディションとライセンス","explanation":"作成・編集・実行すべて可能なのはフル機能版です。","wrongChoiceExplanations":{},"domain":"overview","service":"フル機能版","difficulty":1,"tags":["ドリル"],"beginnerNote":null},
- {"id":"qd-ov-007","question":"【説明】『実行に特化し、記録・編集や部分実行はできない』エディションはどれ？","choices":["実行版","フル機能版","開発版","無制限版"],"correctAnswers":[0],"lessonTheme":"エディションとライセンス","explanation":"実行に特化したエディションが実行版です。","wrongChoiceExplanations":{},"domain":"overview","service":"実行版","difficulty":1,"tags":["ドリル"],"beginnerNote":null},
- {"id":"qd-ov-008","question":"【穴埋め】（　）方式は同時利用数の範囲で複数端末が使い回せる。","choices":["フローティング","ノードロック","従量課金","買い切り"],"correctAnswers":[0],"lessonTheme":"エディションとライセンス","explanation":"同時利用数で共有できるのはフローティング方式です。","wrongChoiceExplanations":{},"domain":"overview","service":"フローティングライセンス","difficulty":2,"tags":["ドリル"],"beginnerNote":null},
- {"id":"qd-ov-009","question":"【誤り探し】ノードロックライセンスの説明として誤っているものはどれ？","choices":["同時利用数の範囲で複数端末が使える","インストールした特定端末でのみ使える","端末を固定して利用する","フローティングと対比される"],"correctAnswers":[0],"lessonTheme":"エディションとライセンス","explanation":"同時利用数で複数端末が使えるのはフローティングです。ノードロックは端末固定です。","wrongChoiceExplanations":{},"domain":"overview","service":"ノードロックライセンス","difficulty":2,"tags":["ドリル"],"beginnerNote":null},
- {"id":"qd-ov-010","question":"【シナリオ】開発は少数、実行端末は多数。コストを抑える割り当ては？","choices":["少数フル機能版＋多数実行版","全部フル機能版","全部実行版","全部評価版"],"correctAnswers":[0],"lessonTheme":"エディションとライセンス","explanation":"作る所はフル機能版、動かす所は実行版が基本設計です。","wrongChoiceExplanations":{},"domain":"overview","service":"エディション","difficulty":2,"tags":["ドリル"],"beginnerNote":null},
- {"id":"qd-ov-011","question":"【用途】分岐・繰り返し・待機などシナリオの骨組みとなる基本部品はどれ？","choices":["ノード","ライブラリ","変数","ログ"],"correctAnswers":[0],"lessonTheme":"画面構成と部品","explanation":"骨組みの基本操作の部品がノードです。","wrongChoiceExplanations":{},"domain":"overview","service":"ノード","difficulty":1,"tags":["ドリル"],"beginnerNote":null},
- {"id":"qd-ov-012","question":"【説明】『部品をここへドラッグして手順を組み立てる編集エリア』はどれ？","choices":["フローチャート","プロパティ","ステータスバー","メニューバー"],"correctAnswers":[0],"lessonTheme":"画面構成と部品","explanation":"手順を組み立てる編集エリアがフローチャートです。","wrongChoiceExplanations":{},"domain":"overview","service":"フローチャート","difficulty":1,"tags":["ドリル"],"beginnerNote":null},
- {"id":"qd-ov-013","question":"【穴埋め】選択した部品の詳細設定は（　）で行う。","choices":["プロパティ","パレット","データ一覧","ログ"],"correctAnswers":[0],"lessonTheme":"画面構成と部品","explanation":"部品の詳細設定はプロパティで行います。","wrongChoiceExplanations":{},"domain":"overview","service":"プロパティ","difficulty":1,"tags":["ドリル"],"beginnerNote":null},
- {"id":"qd-ov-014","question":"【シナリオ】一連の共通手順を部品化して呼び出し再利用したい。使うのは？","choices":["サブシナリオ","コメント","待機","ステータスバー"],"correctAnswers":[0],"lessonTheme":"画面構成と部品","explanation":"共通手順の再利用はサブシナリオで行います。","wrongChoiceExplanations":{},"domain":"overview","service":"サブシナリオ","difficulty":2,"tags":["ドリル"],"beginnerNote":null},
- {"id":"qd-ov-015","question":"【誤り探し】ライブラリの説明として誤っているものはどれ？","choices":["分岐や繰り返しなど骨組みの基本操作を担う","Excel操作など細かな操作をまとめた部品","プロパティで対象や格納先を設定する","ノードと組み合わせて使う"],"correctAnswers":[0],"lessonTheme":"画面構成と部品","explanation":"分岐や繰り返しなど骨組みはノードです。ライブラリは細かな具体操作です。","wrongChoiceExplanations":{},"domain":"overview","service":"ライブラリ","difficulty":2,"tags":["ドリル"],"beginnerNote":null}
+ {
+  "id": "qd-ov-001",
+  "question": "【用途】定型的なPC操作をソフトのロボットに代行させて自動化する仕組みはどれ？",
+  "choices": [
+   "RPA",
+   "OCR",
+   "VPN",
+   "CAD"
+  ],
+  "correctAnswers": [
+   0
+  ],
+  "lessonTheme": "RPAとWinActorの基礎",
+  "explanation": "定型操作を自動化する仕組みがRPA（Robotic Process Automation）です。",
+  "wrongChoiceExplanations": {},
+  "domain": "overview",
+  "service": "RPAとは",
+  "difficulty": 1,
+  "tags": [
+   "ドリル"
+  ],
+  "beginnerNote": null
+ },
+ {
+  "id": "qd-ov-002",
+  "question": "【説明】『NTTデータ製の純国産RPAツールで日本語で操作できる』が指すものはどれ？",
+  "choices": [
+   "WinActor",
+   "Excel",
+   "Windows",
+   "Chrome"
+  ],
+  "correctAnswers": [
+   0
+  ],
+  "lessonTheme": "RPAとWinActorの基礎",
+  "explanation": "純国産・日本語対応のRPAツールはWinActorです。",
+  "wrongChoiceExplanations": {},
+  "domain": "overview",
+  "service": "WinActorとは",
+  "difficulty": 1,
+  "tags": [
+   "ドリル"
+  ],
+  "beginnerNote": null
+ },
+ {
+  "id": "qd-ov-003",
+  "question": "【穴埋め】RPAの自動化レベルで、定型業務を自動化する段階は（　）である。",
+  "choices": [
+   "クラス1（RPA）",
+   "クラス2（EPA）",
+   "クラス3（CA）",
+   "クラス4"
+  ],
+  "correctAnswers": [
+   0
+  ],
+  "lessonTheme": "RPAとWinActorの基礎",
+  "explanation": "クラス1がRPA（定型）、クラス2がEPA（AI併用）、クラス3がCA（自律化）です。",
+  "wrongChoiceExplanations": {},
+  "domain": "overview",
+  "service": "RPAの三段階(クラス)",
+  "difficulty": 2,
+  "tags": [
+   "ドリル"
+  ],
+  "beginnerNote": null
+ },
+ {
+  "id": "qd-ov-004",
+  "question": "【シナリオ】毎日同じ手順の請求データ転記を自動化したい。適したツールはどれ？",
+  "choices": [
+   "WinActorでシナリオ化",
+   "手作業を続ける",
+   "電卓で計算",
+   "紙に転記"
+  ],
+  "correctAnswers": [
+   0
+  ],
+  "lessonTheme": "RPAとWinActorの基礎",
+  "explanation": "手順が定まった繰り返し作業はWinActorでの自動化に向きます。",
+  "wrongChoiceExplanations": {},
+  "domain": "overview",
+  "service": "RPAの適用業務",
+  "difficulty": 1,
+  "tags": [
+   "ドリル"
+  ],
+  "beginnerNote": null
+ },
+ {
+  "id": "qd-ov-005",
+  "question": "【誤り探し】RPAの説明として誤っているものはどれ？",
+  "choices": [
+   "人の代わりに経営判断を下すのが本来の役割",
+   "定型作業を正確・高速に代行する",
+   "複数アプリをまたいで操作できる",
+   "ソフトウェアのロボットである"
+  ],
+  "correctAnswers": [
+   0
+  ],
+  "lessonTheme": "RPAとWinActorの基礎",
+  "explanation": "経営判断のような非定型の意思決定はRPA本来の役割ではありません。",
+  "wrongChoiceExplanations": {},
+  "domain": "overview",
+  "service": "RPAとマクロの違い",
+  "difficulty": 2,
+  "tags": [
+   "ドリル"
+  ],
+  "beginnerNote": null
+ },
+ {
+  "id": "qd-ov-006",
+  "question": "【用途】シナリオの作成・編集・実行のすべてが行えるエディションはどれ？",
+  "choices": [
+   "フル機能版",
+   "実行版",
+   "評価版のみ",
+   "管理版"
+  ],
+  "correctAnswers": [
+   0
+  ],
+  "lessonTheme": "エディションとライセンス",
+  "explanation": "作成・編集・実行すべて可能なのはフル機能版です。",
+  "wrongChoiceExplanations": {},
+  "domain": "overview",
+  "service": "フル機能版",
+  "difficulty": 1,
+  "tags": [
+   "ドリル"
+  ],
+  "beginnerNote": null
+ },
+ {
+  "id": "qd-ov-007",
+  "question": "【説明】『実行に特化し、記録・編集や部分実行はできない』エディションはどれ？",
+  "choices": [
+   "実行版",
+   "フル機能版",
+   "開発版",
+   "無制限版"
+  ],
+  "correctAnswers": [
+   0
+  ],
+  "lessonTheme": "エディションとライセンス",
+  "explanation": "実行に特化したエディションが実行版です。",
+  "wrongChoiceExplanations": {},
+  "domain": "overview",
+  "service": "実行版",
+  "difficulty": 1,
+  "tags": [
+   "ドリル"
+  ],
+  "beginnerNote": null
+ },
+ {
+  "id": "qd-ov-008",
+  "question": "【穴埋め】（　）方式は同時利用数の範囲で複数端末が使い回せる。",
+  "choices": [
+   "フローティング",
+   "ノードロック",
+   "従量課金",
+   "買い切り"
+  ],
+  "correctAnswers": [
+   0
+  ],
+  "lessonTheme": "エディションとライセンス",
+  "explanation": "同時利用数で共有できるのはフローティング方式です。",
+  "wrongChoiceExplanations": {},
+  "domain": "overview",
+  "service": "フローティングライセンス",
+  "difficulty": 2,
+  "tags": [
+   "ドリル"
+  ],
+  "beginnerNote": null
+ },
+ {
+  "id": "qd-ov-009",
+  "question": "【誤り探し】ノードロックライセンスの説明として誤っているものはどれ？",
+  "choices": [
+   "同時利用数の範囲で複数端末が使える",
+   "インストールした特定端末でのみ使える",
+   "端末を固定して利用する",
+   "フローティングと対比される"
+  ],
+  "correctAnswers": [
+   0
+  ],
+  "lessonTheme": "エディションとライセンス",
+  "explanation": "同時利用数で複数端末が使えるのはフローティングです。ノードロックは端末固定です。",
+  "wrongChoiceExplanations": {},
+  "domain": "overview",
+  "service": "ノードロックライセンス",
+  "difficulty": 2,
+  "tags": [
+   "ドリル"
+  ],
+  "beginnerNote": null
+ },
+ {
+  "id": "qd-ov-010",
+  "question": "【シナリオ】開発は少数、実行端末は多数。コストを抑える割り当ては？",
+  "choices": [
+   "少数フル機能版＋多数実行版",
+   "全部フル機能版",
+   "全部実行版",
+   "全部評価版"
+  ],
+  "correctAnswers": [
+   0
+  ],
+  "lessonTheme": "エディションとライセンス",
+  "explanation": "作る所はフル機能版、動かす所は実行版が基本設計です。",
+  "wrongChoiceExplanations": {},
+  "domain": "overview",
+  "service": "エディション",
+  "difficulty": 2,
+  "tags": [
+   "ドリル"
+  ],
+  "beginnerNote": null
+ },
+ {
+  "id": "qd-ov-011",
+  "question": "【用途】分岐・繰り返し・待機などシナリオの骨組みとなる基本部品はどれ？",
+  "choices": [
+   "ノード",
+   "ライブラリ",
+   "変数",
+   "ログ"
+  ],
+  "correctAnswers": [
+   0
+  ],
+  "lessonTheme": "画面構成と部品",
+  "explanation": "骨組みの基本操作の部品がノードです。",
+  "wrongChoiceExplanations": {},
+  "domain": "overview",
+  "service": "ノード",
+  "difficulty": 1,
+  "tags": [
+   "ドリル"
+  ],
+  "beginnerNote": null
+ },
+ {
+  "id": "qd-ov-012",
+  "question": "【説明】『部品をここへドラッグして手順を組み立てる編集エリア』はどれ？",
+  "choices": [
+   "フローチャート",
+   "プロパティ",
+   "ステータスバー",
+   "メニューバー"
+  ],
+  "correctAnswers": [
+   0
+  ],
+  "lessonTheme": "画面構成と部品",
+  "explanation": "手順を組み立てる編集エリアがフローチャートです。",
+  "wrongChoiceExplanations": {},
+  "domain": "overview",
+  "service": "フローチャート",
+  "difficulty": 1,
+  "tags": [
+   "ドリル"
+  ],
+  "beginnerNote": null
+ },
+ {
+  "id": "qd-ov-013",
+  "question": "【穴埋め】選択した部品の詳細設定は（　）で行う。",
+  "choices": [
+   "プロパティ",
+   "パレット",
+   "データ一覧",
+   "ログ"
+  ],
+  "correctAnswers": [
+   0
+  ],
+  "lessonTheme": "画面構成と部品",
+  "explanation": "部品の詳細設定はプロパティで行います。",
+  "wrongChoiceExplanations": {},
+  "domain": "overview",
+  "service": "プロパティ",
+  "difficulty": 1,
+  "tags": [
+   "ドリル"
+  ],
+  "beginnerNote": null
+ },
+ {
+  "id": "qd-ov-014",
+  "question": "【シナリオ】一連の共通手順を部品化して呼び出し再利用したい。使うのは？",
+  "choices": [
+   "サブルーチン",
+   "付箋",
+   "データ一覧",
+   "ウィンドウ識別ルール"
+  ],
+  "correctAnswers": [
+   0
+  ],
+  "lessonTheme": "画面構成と部品",
+  "explanation": "処理をサブルーチングループにまとめ、サブルーチン呼び出しで実行します。",
+  "wrongChoiceExplanations": {},
+  "domain": "overview",
+  "service": "サブルーチン",
+  "difficulty": 1,
+  "tags": [
+   "ドリル"
+  ],
+  "beginnerNote": null
+ },
+ {
+  "id": "qd-ov-015",
+  "question": "【誤り探し】ライブラリとノードの関係の説明として誤っているものはどれ？",
+  "choices": [
+   "分岐や繰り返しなど骨組みの基本操作を担う",
+   "Excel操作など細かな操作をまとめた部品",
+   "プロパティで対象や格納先を設定する",
+   "ノードと組み合わせて使う"
+  ],
+  "correctAnswers": [
+   0
+  ],
+  "lessonTheme": "画面構成と部品",
+  "explanation": "分岐や繰り返しなど骨組みはノードです。ライブラリは細かな具体操作です。",
+  "wrongChoiceExplanations": {},
+  "domain": "overview",
+  "service": "ライブラリ",
+  "difficulty": 2,
+  "tags": [
+   "ドリル"
+  ],
+  "beginnerNote": null
+ }
 ]
