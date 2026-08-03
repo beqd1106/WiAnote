@@ -247,8 +247,13 @@ for df in sorted(glob.glob(os.path.join(DESIGN, "drill_*.json"))):
 # レッスン割当：新規問題は lessonTheme、既存問題は service で小レッスンへ。
 # 本問が1問でも割当漏れするとエラー（ドリルは同分野内でラウンドロビン）。
 # ------------------------------------------------------------
+# 1レッスンに載せる確認問題の上限（超過分はランダム問題プールへ）
+QUIZ_PER_LESSON = 10
+
+
 def build_lessons(all_qs):
     from collections import defaultdict
+    qmap = {q["id"]: q for q in all_qs}
     main = [q for q in all_qs if "ドリル" not in q.get("tags", [])]
     drills = [q for q in all_qs if "ドリル" in q.get("tags", [])]
     dom_subs = defaultdict(list)
@@ -286,6 +291,18 @@ def build_lessons(all_qs):
         if target is None:
             target = subs[rr[dq["domain"]] % len(subs)]; rr[dq["domain"]] += 1
         target["_drill"].append(dq["id"])
+
+    # 確認問題は1レッスンあたり QUIZ_PER_LESSON 問まで。
+    # あふれた分はランダム問題（ドリル）のプールへ回す（問題自体は模試・演習でも使われる）。
+    for sl in SUBLESSONS:
+        picked = sl["_quiz"]
+        if len(picked) <= QUIZ_PER_LESSON:
+            continue
+        # 難易度の低い順→登場順で選び、確認問題は「学んだ直後の確認」にふさわしい構成にする
+        order = sorted(picked, key=lambda qid: (qmap[qid].get("difficulty", 2), picked.index(qid)))
+        keep = set(order[:QUIZ_PER_LESSON])
+        sl["_quiz"] = [qid for qid in picked if qid in keep]
+        sl["_drill"] = [qid for qid in picked if qid not in keep] + sl["_drill"]
 
     out = []
     for sl in SUBLESSONS:

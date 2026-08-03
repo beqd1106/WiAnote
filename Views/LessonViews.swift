@@ -113,10 +113,10 @@ struct LessonDetailView: View {
     @State private var showQuiz = false
     @State private var showChallenge = false
     @State private var showDrill = false
-    /// ドリルは毎回シャッフルして一定数だけ出題する。タップ時に確定してここへ入れる。
+    /// ランダム問題は毎回シャッフルして一定数だけ出題する。タップ時に確定してここへ入れる。
     @State private var drillQuestions: [QuizQuestion] = []
 
-    /// 1回のドリルで出題する問題数
+    /// 1回のランダム問題で出題する問題数
     private let drillSessionSize = 10
 
     private var isDone: Bool { store.isLessonCompleted(lesson.id) }
@@ -164,7 +164,7 @@ struct LessonDetailView: View {
                         }
                     }
 
-                    // 反復ドリル（5パターン）
+                    // ランダム問題（確認問題に載せきれない分＋反復ドリル）
                     if !drillIds.isEmpty { drillCard }
 
                     // 中級チャレンジ（腕試し）
@@ -190,33 +190,33 @@ struct LessonDetailView: View {
                            showLessonLink: false)
         }
         .navigationDestination(isPresented: $showDrill) {
-            QuizPlayerView(title: "反復ドリル・\(lesson.title)",
+            QuizPlayerView(title: "ランダム問題・\(lesson.title)",
                            questions: drillQuestions,
                            showLessonLink: false)
         }
     }
 
-    /// ドリルプールをシャッフルして出題分だけ取り出す
+    /// ランダム問題のプールをシャッフルして出題分だけ取り出す
     private func startDrill() {
         let pool = drillIds.compactMap { ContentRepository.shared.question(id: $0) }
         drillQuestions = Array(pool.shuffled().prefix(drillSessionSize))
         showDrill = true
     }
 
-    // 反復ドリル（同じ知識を5パターンで問い、定着させる）
+    // ランダム問題（このレッスンの範囲から毎回シャッフルして出題する）
     private var drillCard: some View {
         Card {
             VStack(alignment: .leading, spacing: Theme.Space.s) {
                 HStack(spacing: 6) {
                     Image(systemName: "arrow.triangle.2.circlepath").foregroundStyle(Theme.teal)
-                    Text("反復ドリル").font(.system(size: 16, weight: .bold)).foregroundStyle(Theme.navy)
-                    Text("5パターン")
+                    Text("ランダム問題").font(.system(size: 16, weight: .bold)).foregroundStyle(Theme.navy)
+                    Text("シャッフル")
                         .font(.system(size: 10, weight: .bold)).foregroundStyle(Theme.teal)
                         .padding(.horizontal, 6).padding(.vertical, 2)
                         .background(Theme.teal.opacity(0.12)).clipShape(Capsule())
                     Spacer()
                 }
-                Text("同じ内容を5つの角度（用途・説明・シナリオ・穴埋め・誤り探し）で出題。毎回ランダムに\(drillSessionSize)問出るので、繰り返すほど定着します。")
+                Text("このレッスンの範囲から毎回ランダムに\(drillSessionSize)問を出題します。確認問題に載せきれなかった問題や、5つの角度（用途・説明・シナリオ・穴埋め・誤り探し）で問う反復ドリルもここに入っています。")
                     .font(.system(size: 13)).foregroundStyle(Theme.inkSoft)
                     .fixedSize(horizontal: false, vertical: true)
                 Button {

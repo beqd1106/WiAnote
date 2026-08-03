@@ -230,7 +230,7 @@ struct HomeView: View {
                                 Text("\(rec.domain.title)を集中的に固めよう")
                                     .font(.system(size: 15, weight: .semibold)).foregroundStyle(Theme.ink)
                                     .lineLimit(2).fixedSize(horizontal: false, vertical: true)
-                                Text("「\(rec.lesson.title)」の反復ドリルで基礎から").captionStyle()
+                                Text("「\(rec.lesson.title)」のランダム問題で基礎から").captionStyle()
                             }
                             Spacer(minLength: 0)
                             Image(systemName: "chevron.right").foregroundStyle(Theme.inkSoft).font(.system(size: 13))
