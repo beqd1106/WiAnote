@@ -22,6 +22,8 @@ struct QuizQuestion: Codable, Identifiable, Hashable {
     let tags: [String]
     /// 初心者向けの一言補足
     let beginnerNote: String?
+    /// 出典（WinActor操作マニュアルの該当ページ・節）。旧データには無いので任意。
+    let source: String?
 
     /// 複数選択問題かどうか
     var isMultipleSelect: Bool { correctAnswers.count > 1 }
@@ -63,7 +65,7 @@ struct Lesson: Codable, Identifiable, Hashable {
     /// 中級チャレンジ（腕試し）。アソシエイト試験範囲内のシナリオ型の難問。無い場合は空。
     /// 旧データでキーが無くてもデコードできるよう任意にする。
     let challengeQuizIds: [String]?
-    /// ランダム問題のプール。確認問題（10問）に載せきれない本問と、5パターンの反復ドリルが入る。
+    /// ランダム問題のプール。確認問題（10問）・腕試し（5問）に載せきれない問題が入る。
     let drillQuizIds: [String]?
 }
 

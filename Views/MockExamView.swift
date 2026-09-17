@@ -49,7 +49,7 @@ struct MockExamStartView: View {
                 infoRow("doc.text.fill", "出題数", "\(fullCount)問（公式配点に近い比率）")
                 infoRow("timer", "制限時間", "\(minutes(for: fullCount))分")
                 infoRow("chart.pie.fill", "結果", "分野別スコアと弱点を表示")
-                Text("レッスンの反復ドリルは除外し、本番に近い難易度で出題します。※本番は50問・60分・合格は原則正答率7割（最新は公式サイトでご確認ください）。")
+                Text("WinActor操作マニュアル（Ver.7.6）に準拠した問題から、本番の分野配分で出題します。※本番は50問・60分・合格は原則正答率7割（最新は公式サイトでご確認ください）。")
                     .font(.system(size: 12)).foregroundStyle(Theme.inkSoft)
                 PrimaryButton(title: "本番模試を始める", icon: "play.fill") {
                     run = MockRunConfig(title: "模擬試験",

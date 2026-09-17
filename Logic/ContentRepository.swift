@@ -73,8 +73,9 @@ final class ContentRepository {
         questions.filter { $0.domain == domain }
     }
 
-    /// 模試に使う代表的な問題プール。反復ドリル（基礎固め・変種が多い）は本番の難易度感から
-    /// 外れるため除外し、基本問題・中級問題・オリジナル問題で本番に近い構成にする。
+    /// 模試に使う問題プール。現在の問題はすべて WinActor 操作マニュアル（Ver.7.6）に
+    /// 根拠を持つ出題範囲内の問題なので全件を対象にする。
+    /// （旧データにあった反復ドリルは本番の難易度感から外れるため除外する）
     var examPool: [QuizQuestion] {
         questions.filter { !$0.tags.contains("ドリル") }
     }

@@ -216,7 +216,7 @@ struct LessonDetailView: View {
                         .background(Theme.teal.opacity(0.12)).clipShape(Capsule())
                     Spacer()
                 }
-                Text("このレッスンの範囲から毎回ランダムに\(drillSessionSize)問を出題します。確認問題に載せきれなかった問題や、5つの角度（用途・説明・シナリオ・穴埋め・誤り探し）で問う反復ドリルもここに入っています。")
+                Text("このレッスンの範囲から毎回ランダムに\(drillSessionSize)問を出題します。確認問題・腕試しに載せきれなかった問題がすべてここに入っています。")
                     .font(.system(size: 13)).foregroundStyle(Theme.inkSoft)
                     .fixedSize(horizontal: false, vertical: true)
                 Button {

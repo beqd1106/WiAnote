@@ -192,6 +192,17 @@ struct QuizPlayerView: View {
                     .clipShape(RoundedRectangle(cornerRadius: 8))
                 }
 
+                // 出典（マニュアルの該当ページ）。どこを読み直せばよいかが分かる。
+                if let source = current.source, !source.isEmpty {
+                    HStack(alignment: .top, spacing: 5) {
+                        Image(systemName: "doc.text").font(.system(size: 11))
+                        Text(source).font(.system(size: 11))
+                            .fixedSize(horizontal: false, vertical: true)
+                    }
+                    .foregroundStyle(Theme.inkSoft)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                }
+
                 // この問題に関連する解説レッスンへ
                 if showLessonLink, let lesson = ContentRepository.shared.lesson(forQuestion: current) {
                     NavigationLink { LessonDetailView(lesson: lesson) } label: {
