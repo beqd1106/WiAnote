@@ -189,6 +189,66 @@ final class StudyStore: ObservableObject {
         return Set(((try? context.fetch(d)) ?? []).map(\.questionId))
     }
 
+    // MARK: - 学習データの整理
+
+    /// いま出題される問題に存在しない問題IDを参照している記録の件数。
+    /// アプリ更新で問題が入れ替わると、旧IDを指したままの履歴・復習予定・ブックマークが残るため、
+    /// それだけを選んで片付けられるようにする。
+    func staleRecordCount() -> Int {
+        let valid = validQuestionIds
+        return staleAnswers(valid).count + staleReviews(valid).count + staleMetas(valid).count
+    }
+
+    /// 旧問題を参照している記録だけを削除し、削除件数を返す。
+    /// いま出題される問題に対する成績・復習予定はそのまま残る。
+    @discardableResult
+    func deleteStaleRecords() -> Int {
+        let valid = validQuestionIds
+        var removed = 0
+        for r in staleAnswers(valid) { context.delete(r); removed += 1 }
+        for r in staleReviews(valid) { context.delete(r); removed += 1 }
+        for r in staleMetas(valid)   { context.delete(r); removed += 1 }
+        bumpAndSave()
+        return removed
+    }
+
+    private var validQuestionIds: Set<String> { Set(repo.questions.map(\.id)) }
+
+    private func staleAnswers(_ valid: Set<String>) -> [AnswerRecord] {
+        ((try? context.fetch(FetchDescriptor<AnswerRecord>())) ?? [])
+            .filter { !valid.contains($0.questionId) }
+    }
+
+    private func staleReviews(_ valid: Set<String>) -> [ReviewItem] {
+        ((try? context.fetch(FetchDescriptor<ReviewItem>())) ?? [])
+            .filter { !valid.contains($0.questionId) }
+    }
+
+    /// ブックマークやメモが付いていないものは消しても失うものが無いが、
+    /// 旧問題のメモは開く手段が無いため、まとめて片付ける対象に含める。
+    private func staleMetas(_ valid: Set<String>) -> [QuestionMeta] {
+        ((try? context.fetch(FetchDescriptor<QuestionMeta>())) ?? [])
+            .filter { !valid.contains($0.questionId) }
+    }
+
+    /// すべて初期化して初回診断へ戻す。
+    func resetAll() {
+        try? context.delete(model: UserProfile.self)
+        try? context.delete(model: QuestionMeta.self)
+        resetProgressKeepingProfile()      // 履歴系はこちらでまとめて削除
+    }
+
+    /// 学習の記録だけを消す。プロフィール・学習プランと、
+    /// 自分で付けたブックマーク／メモ（QuestionMeta）は残す。
+    func resetProgressKeepingProfile() {
+        try? context.delete(model: AnswerRecord.self)
+        try? context.delete(model: ReviewItem.self)
+        try? context.delete(model: MockExamResult.self)
+        try? context.delete(model: StudyDayLog.self)
+        try? context.delete(model: LessonProgress.self)
+        bumpAndSave()
+    }
+
     // MARK: - 統計
 
     private var allAnswers: [AnswerRecord] {

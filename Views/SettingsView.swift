@@ -6,6 +6,11 @@ struct SettingsView: View {
     @AppStorage("aiAssistEnabled") private var aiAssistEnabled = false
     @AppStorage("notificationsEnabled") private var notificationsEnabled = true
     @State private var showResetAlert = false
+    @State private var showStaleAlert = false
+    @State private var showProgressAlert = false
+    /// 「古い問題の記録を削除」で消せる件数（画面を開いたときに数える）
+    @State private var staleCount = 0
+    @State private var cleanupDone: String?
 
     var body: some View {
         NavigationStack {
@@ -19,12 +24,13 @@ struct SettingsView: View {
                         notificationCard
                         nextCertCard
                         legalCard
-                        resetButton
+                        resetCard
                     }
                     .padding(Theme.Space.l)
                 }
             }
             .navigationTitle("設定")
+            .onAppear { staleCount = store.staleRecordCount() }
         }
     }
 
@@ -145,19 +151,93 @@ struct SettingsView: View {
         }
     }
 
-    private var resetButton: some View {
-        Button(role: .destructive) { showResetAlert = true } label: {
-            Text("学習データを初期化").font(.system(size: 15, weight: .semibold))
-                .frame(maxWidth: .infinity).padding(.vertical, 14)
-                .foregroundStyle(Theme.red).background(Theme.red.opacity(0.08))
-                .clipShape(RoundedRectangle(cornerRadius: Theme.Radius.button))
+    /// リセットは影響範囲の小さい順に3段階。やり直したい範囲だけを選べるようにする。
+    private var resetCard: some View {
+        Card {
+            VStack(alignment: .leading, spacing: Theme.Space.m) {
+                Text("学習データの整理").font(.system(size: 16, weight: .bold)).foregroundStyle(Theme.navy)
+
+                if let done = cleanupDone {
+                    HStack(alignment: .top, spacing: 6) {
+                        Image(systemName: "checkmark.circle.fill").foregroundStyle(Theme.green)
+                            .font(.system(size: 13))
+                        Text(done).font(.system(size: 13)).foregroundStyle(Theme.ink)
+                            .fixedSize(horizontal: false, vertical: true)
+                    }
+                    .padding(Theme.Space.s)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .background(Theme.green.opacity(0.10))
+                    .clipShape(RoundedRectangle(cornerRadius: 8))
+                }
+
+                // ① 入れ替え前の問題を参照している記録だけを消す（有効な進捗は残る）
+                if staleCount > 0 {
+                    resetRow(title: "古い問題の記録を削除",
+                             detail: "アプリの更新で入れ替わる前の問題に対する記録が \(staleCount)件 残っています。"
+                                   + "いま出題される問題の成績には影響しません。",
+                             tint: Theme.blue) { showStaleAlert = true }
+                }
+
+                // ② 履歴を全部消す。プロフィールと学習プランは残すので診断はやり直さない
+                resetRow(title: "学習の記録をリセット",
+                         detail: "解答履歴・復習予定・模試の結果・カレンダーを消します。"
+                               + "プロフィールと学習プラン、ブックマークとメモは残ります。",
+                         tint: Theme.orange) { showProgressAlert = true }
+
+                // ③ 完全初期化
+                resetRow(title: "すべて初期化",
+                         detail: "プロフィール・進捗・履歴がすべて消え、初回診断からやり直します。",
+                         tint: Theme.red) { showResetAlert = true }
+            }
         }
-        .alert("学習データを初期化しますか？", isPresented: $showResetAlert) {
+        .alert("古い問題の記録を削除しますか？", isPresented: $showStaleAlert) {
+            Button("キャンセル", role: .cancel) {}
+            Button("削除する", role: .destructive) {
+                let n = store.deleteStaleRecords()
+                staleCount = store.staleRecordCount()
+                cleanupDone = "古い問題の記録を\(n)件削除しました。"
+            }
+        } message: {
+            Text("いま出題される問題に対する成績・復習予定は残ります。")
+        }
+        .alert("学習の記録をリセットしますか？", isPresented: $showProgressAlert) {
+            Button("キャンセル", role: .cancel) {}
+            Button("リセットする", role: .destructive) {
+                store.resetProgressKeepingProfile()
+                staleCount = store.staleRecordCount()
+                cleanupDone = "学習の記録をリセットしました。プロフィールと学習プランはそのままです。"
+            }
+        } message: {
+            Text("解答履歴・復習予定・模試の結果・カレンダーが消えます。これは取り消せません。")
+        }
+        .alert("すべて初期化しますか？", isPresented: $showResetAlert) {
             Button("キャンセル", role: .cancel) {}
             Button("初期化する", role: .destructive) { resetAll() }
         } message: {
             Text("プロフィール・進捗・履歴がすべて削除され、初回診断からやり直します。")
         }
+    }
+
+    private func resetRow(title: String, detail: String, tint: Color,
+                          action: @escaping () -> Void) -> some View {
+        Button(action: action) {
+            HStack(alignment: .top, spacing: Theme.Space.s) {
+                VStack(alignment: .leading, spacing: 3) {
+                    Text(title).font(.system(size: 14, weight: .bold)).foregroundStyle(tint)
+                    Text(detail).font(.system(size: 12)).foregroundStyle(Theme.inkSoft)
+                        .fixedSize(horizontal: false, vertical: true)
+                        .multilineTextAlignment(.leading)
+                }
+                Spacer(minLength: 0)
+                Image(systemName: "chevron.right").foregroundStyle(tint.opacity(0.6))
+                    .font(.system(size: 12, weight: .semibold))
+            }
+            .padding(Theme.Space.m)
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .background(tint.opacity(0.07))
+            .clipShape(RoundedRectangle(cornerRadius: Theme.Radius.button))
+        }
+        .buttonStyle(.plain)
     }
 
     // MARK: - 部品
@@ -179,14 +259,7 @@ struct SettingsView: View {
     }
 
     private func resetAll() {
-        // 全モデルを削除して初回診断へ戻す
-        try? store.context.delete(model: UserProfile.self)
-        try? store.context.delete(model: AnswerRecord.self)
-        try? store.context.delete(model: ReviewItem.self)
-        try? store.context.delete(model: QuestionMeta.self)
-        try? store.context.delete(model: MockExamResult.self)
-        try? store.context.delete(model: StudyDayLog.self)
-        try? store.context.save()
-        store.objectWillChange.send()
+        // 全モデルを削除して初回診断へ戻す（LessonProgress も含めてストア側でまとめて処理）
+        store.resetAll()
     }
 }
