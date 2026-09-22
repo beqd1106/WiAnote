@@ -33,9 +33,21 @@ struct QuizPlayerView: View {
     @State private var resultByIndex: [Int: Bool] = [:]
     @State private var finished = false
 
+    /// 問題インデックスごとのヒント段階（0=未使用 1=着眼点 2=選択肢しぼり込み）
+    @State private var hintLevelByIndex: [Int: Int] = [:]
+    /// 表示中のヒント文（毎回組み立て直さないよう保持）
+    @State private var hintTextByIndex: [Int: String] = [:]
+    /// しぼり込みで薄くする選択肢
+    @State private var eliminatedByIndex: [Int: Set<Int>] = [:]
+    /// ヒントを使って答えた問題（正解でも復習リストに残す）
+    @State private var hintUsedIndices: Set<Int> = []
+
     private var current: QuizQuestion { questions[index] }
     private var selected: Set<Int> { selectedByIndex[index] ?? [] }
     private var isSubmitted: Bool { submittedIndices.contains(index) }
+    private var hintLevel: Int { hintLevelByIndex[index] ?? 0 }
+    private var eliminated: Set<Int> { eliminatedByIndex[index] ?? [] }
+    private var usedHint: Bool { hintUsedIndices.contains(index) }
     private var correctCount: Int { resultByIndex.values.filter { $0 }.count }
 
     var body: some View {
@@ -83,6 +95,9 @@ struct QuizPlayerView: View {
                         }
                     }
 
+                    // ヒント（回答前だけ。押した人にだけ開く）
+                    if !isSubmitted { hintSection }
+
                     // 選択肢
                     VStack(spacing: Theme.Space.s) {
                         ForEach(Array(current.choices.enumerated()), id: \.offset) { i, choice in
@@ -117,23 +132,29 @@ struct QuizPlayerView: View {
     private func choiceRow(_ i: Int, _ choice: String) -> some View {
         let isSelected = selected.contains(i)
         let isCorrect = current.correctAnswers.contains(i)
+        // ヒントで消した選択肢（答え合わせ後は通常表示に戻す）
+        let isEliminated = !isSubmitted && eliminated.contains(i)
         var bg = Theme.card
         var border = Theme.line
         var icon = "circle"
         var iconColor = Theme.line
-        if isSubmitted {
+        if isEliminated {
+            icon = "minus.circle"
+            iconColor = Theme.inkSoft.opacity(0.6)
+        } else if isSubmitted {
             if isCorrect { bg = Theme.green.opacity(0.10); border = Theme.green; icon = "checkmark.circle.fill"; iconColor = Theme.green }
             else if isSelected { bg = Theme.red.opacity(0.10); border = Theme.red; icon = "xmark.circle.fill"; iconColor = Theme.red }
         } else if isSelected {
             bg = Theme.blueSoft; border = Theme.blue; icon = "largecircle.fill.circle"; iconColor = Theme.blue
         }
         return Button {
-            guard !isSubmitted else { return }
+            guard !isSubmitted, !isEliminated else { return }
             toggle(i)
         } label: {
             HStack(alignment: .top, spacing: Theme.Space.m) {
                 Image(systemName: icon).foregroundStyle(iconColor).font(.system(size: 20))
                 Text(choice).font(.system(size: 15)).foregroundStyle(Theme.ink)
+                    .strikethrough(isEliminated, color: Theme.inkSoft)
                     .fixedSize(horizontal: false, vertical: true)
                 Spacer(minLength: 0)
             }
@@ -142,8 +163,101 @@ struct QuizPlayerView: View {
             .background(bg)
             .clipShape(RoundedRectangle(cornerRadius: Theme.Radius.chip))
             .overlay(RoundedRectangle(cornerRadius: Theme.Radius.chip).stroke(border, lineWidth: 1.2))
+            .opacity(isEliminated ? 0.45 : 1)
         }
         .buttonStyle(.plain)
+        .disabled(isEliminated)
+    }
+
+    // MARK: - ヒント
+
+    /// 未使用なら誘導ボタン、使用後はヒントカード
+    @ViewBuilder
+    private var hintSection: some View {
+        if hintLevel == 0 {
+            Button { revealHint() } label: {
+                HStack(spacing: Theme.Space.s) {
+                    Image(systemName: "lightbulb").font(.system(size: 15, weight: .semibold))
+                    Text("わからない時はヒント").font(.system(size: 14, weight: .semibold))
+                    Spacer(minLength: 0)
+                    Image(systemName: "chevron.down").font(.system(size: 11, weight: .bold))
+                }
+                .foregroundStyle(Theme.orange)
+                .padding(.horizontal, Theme.Space.m)
+                .frame(maxWidth: .infinity, minHeight: 44, alignment: .leading)
+                .background(Theme.orangeSoft.opacity(0.55))
+                .clipShape(RoundedRectangle(cornerRadius: Theme.Radius.chip))
+                .overlay(RoundedRectangle(cornerRadius: Theme.Radius.chip)
+                    .stroke(Theme.orange.opacity(0.35), lineWidth: 1))
+            }
+            .buttonStyle(.plain)
+        } else {
+            hintCard
+        }
+    }
+
+    private var hintCard: some View {
+        VStack(alignment: .leading, spacing: Theme.Space.s) {
+            HStack(spacing: 6) {
+                Image(systemName: "lightbulb.fill").foregroundStyle(Theme.orange).font(.system(size: 14))
+                Text("ヒント").font(.system(size: 13, weight: .bold)).foregroundStyle(Theme.orange)
+                Spacer(minLength: 0)
+                Text("この問題は復習リストに残ります")
+                    .font(.system(size: 11)).foregroundStyle(Theme.inkSoft)
+            }
+            GlossaryText(text: hintTextByIndex[index] ?? "", size: 14, color: Theme.ink)
+
+            if hintLevel == 1 {
+                if HintBuilder.canEliminate(current) {
+                    Button { revealHint() } label: {
+                        HStack(spacing: 6) {
+                            Image(systemName: "wand.and.stars").font(.system(size: 13, weight: .semibold))
+                            Text("まだ迷う：選択肢をしぼる").font(.system(size: 13, weight: .bold))
+                        }
+                        .foregroundStyle(Theme.orange)
+                        .padding(.horizontal, Theme.Space.m)
+                        .frame(minHeight: 40)
+                        .background(Theme.card)
+                        .clipShape(RoundedRectangle(cornerRadius: 10))
+                        .overlay(RoundedRectangle(cornerRadius: 10)
+                            .stroke(Theme.orange.opacity(0.45), lineWidth: 1))
+                    }
+                    .buttonStyle(.plain)
+                }
+            } else {
+                Text("明らかに違う選択肢を薄くしました。残りから選んでください。")
+                    .font(.system(size: 12)).foregroundStyle(Theme.inkSoft)
+            }
+        }
+        .padding(Theme.Space.m)
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .background(Theme.orangeSoft.opacity(0.55))
+        .clipShape(RoundedRectangle(cornerRadius: Theme.Radius.chip))
+        .overlay(RoundedRectangle(cornerRadius: Theme.Radius.chip)
+            .stroke(Theme.orange.opacity(0.3), lineWidth: 1))
+    }
+
+    /// ヒントを1段階進める
+    private func revealHint() {
+        guard !isSubmitted else { return }
+        withAnimation(.easeOut(duration: 0.2)) {
+            switch hintLevel {
+            case 0:
+                hintTextByIndex[index] = HintBuilder.focusHint(
+                    for: current, glossary: ContentRepository.shared.glossary)
+                hintLevelByIndex[index] = 1
+            default:
+                let drop = HintBuilder.eliminatedChoices(for: current)
+                eliminatedByIndex[index] = drop
+                // 消した選択肢を選んでいたら外す
+                if var sel = selectedByIndex[index] {
+                    sel.subtract(drop)
+                    selectedByIndex[index] = sel
+                }
+                hintLevelByIndex[index] = 2
+            }
+            hintUsedIndices.insert(index)
+        }
     }
 
     // MARK: - 解説
@@ -158,8 +272,17 @@ struct QuizPlayerView: View {
                     Text(isCorrect ? "正解！" : "残念、不正解")
                         .font(.system(size: 17, weight: .bold))
                         .foregroundStyle(isCorrect ? Theme.green : Theme.red)
+                    if usedHint {
+                        TagChip(text: "ヒント使用", color: Theme.orange)
+                    }
                     Spacer()
                     bookmarkButton
+                }
+
+                // ヒントつきの正解は「自力」ではないので、復習リストに残すことを伝える
+                if usedHint && isCorrect {
+                    Text("ヒントを使ったので、この問題は復習リストに残します。")
+                        .font(.system(size: 12)).foregroundStyle(Theme.inkSoft)
                 }
 
                 Divider()
@@ -255,22 +378,57 @@ struct QuizPlayerView: View {
                     .frame(width: 180, height: 180)
                     .padding(.top, Theme.Space.xxl)
 
-                Text(rate >= 0.7 ? "よくできました！この調子です。" : "間違えた問題は復習キューに入りました。")
+                Text(summaryMessage)
                     .font(.system(size: 16, weight: .semibold)).foregroundStyle(Theme.navy)
                     .multilineTextAlignment(.center)
 
                 if store.dueReviewCount > 0 {
-                    Text("復習待ち：\(store.dueReviewCount)問").captionStyle()
+                    Text("復習リスト：\(store.dueReviewCount)問").captionStyle()
                 }
 
-                PrimaryButton(title: "終わる", icon: "checkmark") { dismiss() }
-                    .padding(.horizontal, Theme.Space.xl)
+                VStack(spacing: Theme.Space.m) {
+                    if !missedQuestions.isEmpty {
+                        PrimaryButton(title: "間違えた\(missedQuestions.count)問をもう一度",
+                                      icon: "arrow.clockwise") { retryMissed() }
+                        SecondaryButton(title: "終わる", icon: "checkmark") { dismiss() }
+                    } else {
+                        PrimaryButton(title: "終わる", icon: "checkmark") { dismiss() }
+                    }
+                }
+                .padding(.horizontal, Theme.Space.xl)
             }
             .padding(Theme.Space.l)
         }
     }
 
+    /// このセッションで間違えた問題（出題順）
+    private var missedQuestions: [QuizQuestion] {
+        resultByIndex.filter { !$0.value }.keys.sorted()
+            .compactMap { questions.indices.contains($0) ? questions[$0] : nil }
+    }
+
+    private var summaryMessage: String {
+        if missedQuestions.isEmpty { return "全問正解！この調子です。" }
+        return "間違えた\(missedQuestions.count)問を復習リストに入れました。すぐに復習できます。"
+    }
+
     // MARK: - 操作
+
+    /// 間違えた問題だけでセッションをやり直す
+    private func retryMissed() {
+        let missed = missedQuestions
+        guard !missed.isEmpty else { return }
+        questions = missed
+        index = 0
+        selectedByIndex = [:]
+        submittedIndices = []
+        resultByIndex = [:]
+        hintLevelByIndex = [:]
+        hintTextByIndex = [:]
+        eliminatedByIndex = [:]
+        hintUsedIndices = []
+        finished = false
+    }
 
     private func toggle(_ i: Int) {
         var set = selectedByIndex[index] ?? []
@@ -288,7 +446,7 @@ struct QuizPlayerView: View {
         let correct = current.isCorrect(selected: selected)
         resultByIndex[index] = correct
         // 採点・履歴記録は各問1回だけ
-        store.recordAnswer(question: current, correct: correct)
+        store.recordAnswer(question: current, correct: correct, usedHint: usedHint)
     }
 
     private func goPrevious() {

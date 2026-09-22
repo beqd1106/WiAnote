@@ -7,7 +7,7 @@ options:
 
 settings:
   base:
-    MARKETING_VERSION: "1.2.0"            # App Storeに表示されるバージョン
+    MARKETING_VERSION: "1.3.0"            # App Storeに表示されるバージョン
     CURRENT_PROJECT_VERSION: "1"         # ビルド番号（CIで自動上書き）
     VERSIONING_SYSTEM: apple-generic     # agvtoolでビルド番号を更新できるように
     SWIFT_VERSION: "5.9"

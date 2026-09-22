@@ -40,32 +40,35 @@ final class StudyStore: ObservableObject {
     // MARK: - 回答記録
 
     /// 演習/模試で1問回答したときに呼ぶ。履歴・復習キュー・学習ログを更新する。
-    func recordAnswer(question: QuizQuestion, correct: Bool, isMock: Bool = false) {
+    /// - Parameter usedHint: ヒントを使って答えたか。使った場合は正解でも復習リストから卒業させない。
+    func recordAnswer(question: QuizQuestion, correct: Bool, isMock: Bool = false,
+                      usedHint: Bool = false) {
         context.insert(AnswerRecord(questionId: question.id, domain: question.domain,
                                     isCorrect: correct, isMockExam: isMock))
 
         // 復習キューの更新（模試以外）
         if !isMock {
-            updateReviewItem(questionId: question.id, correct: correct)
+            updateReviewItem(questionId: question.id, correct: correct, usedHint: usedHint)
         }
 
         logStudy(questions: 1, minutes: 0)
         bumpAndSave()
     }
 
-    private func updateReviewItem(questionId: String, correct: Bool) {
+    private func updateReviewItem(questionId: String, correct: Bool, usedHint: Bool = false) {
         let existing = fetchReviewItem(questionId)
         if let item = existing {
-            let r = SpacedRepetition.next(currentLevel: item.reviewLevel, correct: correct)
+            let r = SpacedRepetition.next(currentLevel: item.reviewLevel,
+                                          correct: correct, usedHint: usedHint)
             item.reviewLevel = r.level
             item.nextReviewDate = r.nextDate
             item.lastResultCorrect = correct
-            // 正解を重ねて最終段階に達したら卒業（削除）
-            if correct && item.reviewLevel >= SpacedRepetition.intervals.count - 1 {
+            // 自力の正解を重ねて最終段階に達したら卒業（削除）。ヒントつきの正解では卒業させない。
+            if correct && !usedHint && item.reviewLevel >= SpacedRepetition.intervals.count - 1 {
                 context.delete(item)
             }
         } else if !correct {
-            // 間違えた問題を新規に復習キューへ
+            // 間違えた問題を新規に復習キューへ（その場で復習できる状態で入る）
             let r = SpacedRepetition.next(currentLevel: 0, correct: false)
             context.insert(ReviewItem(questionId: questionId, nextReviewDate: r.nextDate,
                                       reviewLevel: 0, lastResultCorrect: false))
