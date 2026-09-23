@@ -95,15 +95,16 @@ struct QuizPlayerView: View {
                         }
                     }
 
-                    // ヒント（回答前だけ。押した人にだけ開く）
-                    if !isSubmitted { hintSection }
-
                     // 選択肢
                     VStack(spacing: Theme.Space.s) {
                         ForEach(Array(current.choices.enumerated()), id: \.offset) { i, choice in
                             choiceRow(i, choice)
                         }
                     }
+
+                    // ヒント（回答前だけ。押した人にだけ開く）
+                    // まず自力で選択肢を読んでもらうため、選択肢の下に置く。
+                    if !isSubmitted { hintSection }
 
                     if isSubmitted { explanationCard }
                 }
