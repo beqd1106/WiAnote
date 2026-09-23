@@ -202,10 +202,11 @@ struct QuizPlayerView: View {
                 Image(systemName: "lightbulb.fill").foregroundStyle(Theme.orange).font(.system(size: 14))
                 Text("ヒント").font(.system(size: 13, weight: .bold)).foregroundStyle(Theme.orange)
                 Spacer(minLength: 0)
-                Text("この問題は復習リストに残ります")
-                    .font(.system(size: 11)).foregroundStyle(Theme.inkSoft)
             }
             GlossaryText(text: hintTextByIndex[index] ?? "", size: 14, color: Theme.ink)
+            Text("ヒントを使った問題は、正解でも復習リストに残します。")
+                .font(.system(size: 11)).foregroundStyle(Theme.inkSoft)
+                .fixedSize(horizontal: false, vertical: true)
 
             if hintLevel == 1 {
                 if HintBuilder.canEliminate(current) {
