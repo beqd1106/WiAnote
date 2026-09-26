@@ -84,7 +84,7 @@ def check_lessons(qids):
             errors.append(f"{w}: domain が不正")
         for s in secs or []:
             need(s, "heading", str, w); need(s, "body", str, w)
-        for key in ("quizIds", "challengeQuizIds", "drillQuizIds"):
+        for key in ("basicQuizIds", "quizIds", "challengeQuizIds", "drillQuizIds"):
             for qid in l.get(key) or []:
                 if qid not in qids:
                     errors.append(f"{w}: {key} の参照先 {qid} が questions.json に無い")
@@ -120,7 +120,7 @@ def main():
 
     used = set()
     for l in lessons:
-        for key in ("quizIds", "challengeQuizIds", "drillQuizIds"):
+        for key in ("basicQuizIds", "quizIds", "challengeQuizIds", "drillQuizIds"):
             used |= set(l.get(key) or [])
     print(f"\nレッスンから到達できる問題: {len(used)} / {len(qids)}")
     if len(used) < len(qids):

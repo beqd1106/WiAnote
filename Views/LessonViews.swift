@@ -98,7 +98,7 @@ struct LessonListView: View {
                                 .clipShape(Capsule())
                         }
                     }
-                    Text("約\(lesson.estimatedMinutes)分・確認問題\(lesson.quizIds.count)問").captionStyle()
+                    Text(questionSummary(lesson)).captionStyle()
                 }
                 Spacer()
                 Image(systemName: "chevron.right").foregroundStyle(Theme.inkSoft).font(.system(size: 13))
@@ -107,9 +107,17 @@ struct LessonListView: View {
     }
 }
 
+/// レッスン一覧の補足行（基礎問題があれば併記する）
+private func questionSummary(_ lesson: Lesson) -> String {
+    let basic = lesson.basicQuizIds?.count ?? 0
+    let parts = basic > 0 ? "基礎\(basic)問・確認\(lesson.quizIds.count)問" : "確認問題\(lesson.quizIds.count)問"
+    return "約\(lesson.estimatedMinutes)分・\(parts)"
+}
+
 struct LessonDetailView: View {
     let lesson: Lesson
     @EnvironmentObject var store: StudyStore
+    @State private var showBasic = false
     @State private var showQuiz = false
     @State private var showChallenge = false
     @State private var showDrill = false
@@ -120,6 +128,7 @@ struct LessonDetailView: View {
     private let drillSessionSize = 10
 
     private var isDone: Bool { store.isLessonCompleted(lesson.id) }
+    private var basicIds: [String] { lesson.basicQuizIds ?? [] }
     private var challengeIds: [String] { lesson.challengeQuizIds ?? [] }
     private var drillIds: [String] { lesson.drillQuizIds ?? [] }
 
@@ -158,7 +167,10 @@ struct LessonDetailView: View {
                         }
                     }
 
-                    if !lesson.quizIds.isEmpty {
+                    if !basicIds.isEmpty {
+                        // 基礎問題 → 確認問題 の順に解いてもらう（確認問題はマニュアルの細部まで問うため）
+                        stepsCard
+                    } else if !lesson.quizIds.isEmpty {
                         PrimaryButton(title: "確認問題に進む（\(lesson.quizIds.count)問）", icon: "checklist") {
                             showQuiz = true
                         }
@@ -178,6 +190,11 @@ struct LessonDetailView: View {
         }
         .navigationTitle("レッスン")
         .navigationBarTitleDisplayMode(.inline)
+        .navigationDestination(isPresented: $showBasic) {
+            QuizPlayerView(title: "基礎問題・\(lesson.title)",
+                           questions: basicIds.compactMap { ContentRepository.shared.question(id: $0) },
+                           showLessonLink: false)
+        }
         .navigationDestination(isPresented: $showQuiz) {
             QuizPlayerView(title: lesson.title,
                            questions: lesson.quizIds.compactMap { ContentRepository.shared.question(id: $0) },
@@ -193,6 +210,45 @@ struct LessonDetailView: View {
             QuizPlayerView(title: "ランダム問題・\(lesson.title)",
                            questions: drillQuestions,
                            showLessonLink: false)
+        }
+    }
+
+    // 基礎問題（STEP 1）→ 確認問題（STEP 2）の2段構え
+    private var stepsCard: some View {
+        Card {
+            VStack(alignment: .leading, spacing: Theme.Space.l) {
+                Text("問題に挑戦").font(.system(size: 16, weight: .bold)).foregroundStyle(Theme.navy)
+
+                VStack(alignment: .leading, spacing: Theme.Space.s) {
+                    stepLabel(1, "基礎問題", "レッスンを読んだら、まずここから。用語と役割を確認します。")
+                    PrimaryButton(title: "基礎問題を解く（\(basicIds.count)問）", icon: "leaf.fill") {
+                        showBasic = true
+                    }
+                }
+
+                if !lesson.quizIds.isEmpty {
+                    VStack(alignment: .leading, spacing: Theme.Space.s) {
+                        stepLabel(2, "確認問題", "本試験と同じく、画面の名前や設定項目まで問います。")
+                        SecondaryButton(title: "確認問題に進む（\(lesson.quizIds.count)問）", icon: "checklist") {
+                            showQuiz = true
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    private func stepLabel(_ number: Int, _ title: String, _ note: String) -> some View {
+        HStack(alignment: .top, spacing: Theme.Space.s) {
+            Text("\(number)")
+                .font(.system(size: 12, weight: .bold)).foregroundStyle(.white)
+                .frame(width: 22, height: 22)
+                .background(Circle().fill(number == 1 ? Theme.orange : Theme.blue))
+            VStack(alignment: .leading, spacing: 2) {
+                Text("STEP \(number)・\(title)").font(.system(size: 14, weight: .semibold)).foregroundStyle(Theme.ink)
+                Text(note).font(.system(size: 13)).foregroundStyle(Theme.inkSoft)
+                    .fixedSize(horizontal: false, vertical: true)
+            }
         }
     }
 

@@ -13,6 +13,9 @@ WiAnote：新しい問題バンク（マニュアル準拠929問）をアプリ�
        challengeQuizIds = 腕試し5問（難易度3から）
        drillQuizIds = 残り全部（ランダム演習のプール）
   3. Resources/questions.json と Resources/lessons.json を書き換える
+
+※ questions.json を丸ごと置き換えるので、基礎問題（b-*）も消える。実行後は
+   python design/add_basic_questions.py design/basic_questions --apply で入れ直すこと。
 """
 import json, re, sys, os, collections, random
 

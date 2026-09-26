@@ -61,6 +61,9 @@ struct Lesson: Codable, Identifiable, Hashable {
     let estimatedMinutes: Int
     let summary: String
     let sections: [LessonSection]
+    /// 基礎問題。レッスン本文を読めば解けるやさしい問題で、確認問題の前に解く。
+    /// 旧データでキーが無くてもデコードできるよう任意にする。
+    let basicQuizIds: [String]?
     let quizIds: [String]
     /// 中級チャレンジ（腕試し）。アソシエイト試験範囲内のシナリオ型の難問。無い場合は空。
     /// 旧データでキーが無くてもデコードできるよう任意にする。

@@ -34,7 +34,7 @@ final class ContentRepository {
         var kwByDomain: [ExamDomain: [(lesson: Lesson, keywords: Set<String>)]] = [:]
         for lesson in lessons {
             var kw = Set<String>()
-            for qid in lesson.quizIds {
+            for qid in (lesson.basicQuizIds ?? []) + lesson.quizIds {
                 qToLesson[qid] = lesson
                 if let q = byId[qid] {
                     kw.insert(Self.normKeyword(q.service))
@@ -75,9 +75,9 @@ final class ContentRepository {
 
     /// 模試に使う問題プール。現在の問題はすべて WinActor 操作マニュアル（Ver.7.6）に
     /// 根拠を持つ出題範囲内の問題なので全件を対象にする。
-    /// （旧データにあった反復ドリルは本番の難易度感から外れるため除外する）
+    /// （旧データにあった反復ドリルと、レッスン用のやさしい基礎問題は本番の難易度感から外れるため除外する）
     var examPool: [QuizQuestion] {
-        questions.filter { !$0.tags.contains("ドリル") }
+        questions.filter { !$0.tags.contains("ドリル") && !$0.tags.contains("基礎") }
     }
 
     func examPool(in domain: ExamDomain) -> [QuizQuestion] {

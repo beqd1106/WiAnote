@@ -260,10 +260,16 @@ final class StudyStore: ObservableObject {
 
     var totalAnswered: Int { allAnswers.count }
 
-    /// 分野別の正答率（直近の理解度を反映するため全履歴ベース）
+    /// 本試験の実力を測る対象の回答（レッスン用のやさしい基礎問題は除く）。
+    /// 基礎問題の正解まで数えると正答率・合格可能性が実力より高く出てしまうため。
+    private var examAnswers: [AnswerRecord] {
+        allAnswers.filter { repo.question(id: $0.questionId)?.tags.contains("基礎") != true }
+    }
+
+    /// 分野別の正答率（直近の理解度を反映するため全履歴ベース。基礎問題は除く）
     func correctRateByDomain() -> [ExamDomain: Double] {
         var result: [ExamDomain: Double] = [:]
-        let answers = allAnswers
+        let answers = examAnswers
         for domain in ExamDomain.allCases {
             let inDomain = answers.filter { $0.domain == domain }
             if inDomain.isEmpty { result[domain] = 0; continue }
@@ -274,7 +280,7 @@ final class StudyStore: ObservableObject {
     }
 
     func answeredCount(in domain: ExamDomain) -> Int {
-        allAnswers.filter { $0.domain == domain }.count
+        examAnswers.filter { $0.domain == domain }.count
     }
 
     /// 最も苦手な分野（回答実績があるもののうち正答率が最低）
