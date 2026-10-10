@@ -18,6 +18,10 @@ targets:
   WiAnote:
     type: application
     platform: iOS
+    scheme:
+      testTargets:
+        - WiAnoteTests
+        - WiAnoteUITests
     sources:
       - App
       - Models
@@ -60,3 +64,16 @@ targets:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.beqd1106.wianote.tests
         GENERATE_INFOPLIST_FILE: YES
+
+  WiAnoteUITests:
+    type: bundle.ui-testing
+    platform: iOS
+    sources:
+      - UITests
+    dependencies:
+      - target: WiAnote
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.beqd1106.wianote.uitests
+        GENERATE_INFOPLIST_FILE: YES
+        TEST_TARGET_NAME: WiAnote
