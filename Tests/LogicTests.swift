@@ -162,4 +162,46 @@ final class LogicTests: XCTestCase {
         XCTAssertLessThanOrEqual(week, 8)
         XCTAssertGreaterThanOrEqual(week, 1)
     }
+
+    // MARK: - 学習カレンダー
+
+    func testStudyLevelThresholds() {
+        let day = Calendar.current.startOfDay(for: .now)
+        func level(_ q: Int, lessons: Int = 0) -> Int {
+            var r = DailyStudyRecord(day: day); r.questions = q; r.lessonsCompleted = lessons
+            return r.level
+        }
+        XCTAssertEqual(level(0), 0)
+        XCTAssertEqual(level(1), 1)
+        XCTAssertEqual(level(9), 1)
+        XCTAssertEqual(level(10), 2)
+        XCTAssertEqual(level(30), 3)
+        XCTAssertEqual(level(60), 4)
+        XCTAssertEqual(level(0, lessons: 2), 2)   // レッスン1つ＝5問分
+    }
+
+    func testEstimateMinutesIgnoresLongBreaks() {
+        let t0 = Date(timeIntervalSince1970: 0)
+        XCTAssertEqual(DailyStudyRecord.estimateMinutes([]), 0)
+        XCTAssertEqual(DailyStudyRecord.estimateMinutes([t0]), 1)
+        // 1分おきに5問 → 30秒 + 4分 ≒ 5分
+        let steady = (0..<5).map { t0.addingTimeInterval(Double($0) * 60) }
+        XCTAssertEqual(DailyStudyRecord.estimateMinutes(steady), 5)
+        // 2時間空いても休憩とみなし、空白は数えない
+        let withBreak = [t0, t0.addingTimeInterval(60), t0.addingTimeInterval(7200)]
+        XCTAssertEqual(DailyStudyRecord.estimateMinutes(withBreak), 2)
+    }
+
+    func testStudyRecordCSVFillsGapsAndHasHeader() throws {
+        let cal = Calendar.current
+        let today = cal.startOfDay(for: .now)
+        let twoDaysAgo = cal.date(byAdding: .day, value: -2, to: today)!
+        var r = DailyStudyRecord(day: twoDaysAgo); r.questions = 4; r.correct = 3
+        let url = try StudyRecordCSV.write(records: [twoDaysAgo: r])
+        let text = try String(contentsOf: url, encoding: .utf8)
+        let lines = text.components(separatedBy: "\r\n").filter { !$0.isEmpty }
+        XCTAssertTrue(lines[0].hasPrefix("\u{FEFF}日付,"))
+        XCTAssertEqual(lines.count, 4)               // 見出し＋3日分（学習しなかった日も入る）
+        XCTAssertTrue(lines[1].contains(",4,3,75,"))  // 4問中3問正解＝75%
+    }
 }

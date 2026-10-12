@@ -329,6 +329,38 @@ final class StudyStore: ObservableObject {
         }
     }
 
+    /// 1問でも解いたことのある問題ID（レッスンのパターンA/B/Cの「解答済み」表示に使う）
+    func answeredQuestionIds() -> Set<String> {
+        Set(allAnswers.map(\.questionId))
+    }
+
+    /// 日ごとの学習記録（学習カレンダー・CSV書き出し用）。キーはその日の0時。
+    func dailyRecords() -> [Date: DailyStudyRecord] {
+        let cal = Calendar.current
+        var result: [Date: DailyStudyRecord] = [:]
+        func record(_ day: Date) -> DailyStudyRecord { result[day] ?? DailyStudyRecord(day: day) }
+
+        // 回答（模試を含む）。学習時間は回答の間隔から推定する
+        let byDay = Dictionary(grouping: allAnswers) { cal.startOfDay(for: $0.answeredAt) }
+        for (day, answers) in byDay {
+            var r = record(day)
+            r.questions = answers.count
+            r.correct = answers.filter(\.isCorrect).count
+            r.mockQuestions = answers.filter(\.isMockExam).count
+            r.estimatedMinutes = DailyStudyRecord.estimateMinutes(answers.map(\.answeredAt))
+            result[day] = r
+        }
+        // 履修したレッスン（最後に履修済みにした日で数える）
+        let lessons = (try? context.fetch(FetchDescriptor<LessonProgress>())) ?? []
+        for p in lessons {
+            let day = cal.startOfDay(for: p.completedAt)
+            var r = record(day)
+            r.lessonsCompleted += 1
+            result[day] = r
+        }
+        return result
+    }
+
     func studyDays() -> Set<Date> {
         let logs = (try? context.fetch(FetchDescriptor<StudyDayLog>())) ?? []
         return Set(logs.map { $0.day })
@@ -409,4 +441,51 @@ struct TodayTask: Identifiable, Hashable {
     let title: String
     let subtitle: String
     let refId: String?
+}
+
+// MARK: - 日ごとの学習記録
+
+/// 学習カレンダーの1日分。保存はせず、回答履歴とレッスン履修から毎回集計する。
+struct DailyStudyRecord: Identifiable, Hashable {
+    let day: Date
+    var questions = 0
+    var correct = 0
+    var mockQuestions = 0
+    var lessonsCompleted = 0
+    /// 回答の間隔から推定した学習時間（分）。実測ではないので画面では「約」を付ける
+    var estimatedMinutes = 0
+
+    var id: Date { day }
+
+    var correctRate: Double? { questions == 0 ? nil : Double(correct) / Double(questions) }
+
+    /// がんばり度（0〜4）。レッスン1つは問題5問分として数える
+    var level: Int {
+        let points = questions + lessonsCompleted * 5
+        switch points {
+        case 0: return 0
+        case 1..<10: return 1
+        case 10..<30: return 2
+        case 30..<60: return 3
+        default: return 4
+        }
+    }
+
+    /// 回答時刻の並びから学習時間を推定する。
+    /// 10分以内の間隔は同じ学習のひとまとまりとみなし、1問あたり最大3分まで数える。
+    static func estimateMinutes(_ times: [Date]) -> Int {
+        let sorted = times.sorted()
+        guard !sorted.isEmpty else { return 0 }
+        var seconds: TimeInterval = 30 // 最初の1問を読む時間
+        for (prev, next) in zip(sorted, sorted.dropFirst()) {
+            let gap = next.timeIntervalSince(prev)
+            seconds += gap <= 600 ? min(gap, 180) : 30
+        }
+        return max(1, Int((seconds / 60).rounded()))
+    }
+
+    /// がんばり度の目安（凡例・アクセシビリティ用）
+    static func levelLabel(_ level: Int) -> String {
+        ["なし", "少し（1〜9問）", "ふつう（10〜29問）", "がんばった（30〜59問）", "すごくがんばった（60問以上）"][max(0, min(4, level))]
+    }
 }

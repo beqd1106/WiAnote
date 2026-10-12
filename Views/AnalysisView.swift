@@ -18,7 +18,7 @@ struct AnalysisView: View {
                             Card {
                                 HStack {
                                     Image(systemName: "calendar").foregroundStyle(Theme.blue)
-                                    Text("学習カレンダー").font(.system(size: 15, weight: .semibold)).foregroundStyle(Theme.navy)
+                                    Text("学習カレンダー・記録の書き出し").font(.system(size: 15, weight: .semibold)).foregroundStyle(Theme.navy)
                                     Spacer()
                                     Text("\(store.studyStreak())日連続").captionStyle()
                                     Image(systemName: "chevron.right").foregroundStyle(Theme.inkSoft)

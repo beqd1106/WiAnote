@@ -1,0 +1,142 @@
+[
+ {
+  "id": "b-ov1-11",
+  "question": "RPAの自動化レベルのうち、一部にAIを組み合わせて非定型業務も扱う段階はどれか。",
+  "choices": [
+   "クラス1（RPA）",
+   "クラス3（CA）",
+   "クラス2（EPA）",
+   "マクロ（VBA）"
+  ],
+  "correctAnswers": [
+   2
+  ],
+  "explanation": "正解はクラス2（EPA）です。EPAは定型業務の自動化に一部AIを組み合わせ、非定型業務も扱えるようにした段階です。定型業務のみを自動化するのはクラス1（RPA）、高度な自律化を目指すのがクラス3（CA）で、段階が異なります。",
+  "wrongChoiceExplanations": {
+   "0": "クラス1（RPA）は、ルールが決まった定型業務のみを自動化する最も基本的な段階です。",
+   "1": "クラス3（CA）は、さらに高度な自律化を目指す最上位の段階です。",
+   "3": "マクロ（VBA）はExcelなどOffice内の自動化に使う仕組みで、RPAの自動化レベルではありません。"
+  },
+  "domain": "overview",
+  "service": "RPAとWinActorの基礎",
+  "difficulty": 1,
+  "tags": [
+   "基礎",
+   "RPAとWinActorの基礎"
+  ],
+  "source": "レッスン本文（RPAとWinActorの基礎）",
+  "beginnerNote": "3段階のうち、真ん中にあたる段階です。"
+ },
+ {
+  "id": "b-ov1-12",
+  "question": "WinActorが苦手とする業務として、レッスン本文に記載されているものはどれか。",
+  "choices": [
+   "その都度、人の判断が必要になる業務",
+   "手順が定まった帳票作成の繰り返し作業",
+   "毎日同じ時刻に行う定期的なメール送信",
+   "決まった形式で行うデータの転記作業"
+  ],
+  "correctAnswers": [
+   0
+  ],
+  "explanation": "正解は、その都度人の判断が必要になる業務です。WinActorは決められた手順を正確に繰り返すツールで、判断を要する業務は不得意です。帳票作成・メール送信・データ転記のような手順が定まった作業は、逆に得意分野です。",
+  "wrongChoiceExplanations": {
+   "1": "手順が決まった帳票作成の繰り返しは、WinActorが得意とする作業です。",
+   "2": "定期的なメール送信は、手順が決まっているためWinActorが得意とする作業です。",
+   "3": "決まった形式のデータ転記は、WinActorが正確かつ高速にこなせる得意な作業です。"
+  },
+  "domain": "overview",
+  "service": "RPAとWinActorの基礎",
+  "difficulty": 1,
+  "tags": [
+   "基礎",
+   "RPAとWinActorの基礎"
+  ],
+  "source": "レッスン本文（RPAとWinActorの基礎）",
+  "beginnerNote": "得意なのは「手順が決まっていること」。その反対の特徴を探します。"
+ },
+ {
+  "id": "b-ov1-13",
+  "question": "WinActorの導入効果として操作マニュアルに記載されている、人の作業時間に関するものはどれか。",
+  "choices": [
+   "サーバの処理速度そのものを大幅に向上させる",
+   "Windows PCの台数を自動的に削減する",
+   "ネットワークの通信速度を高速化する",
+   "ユーザーが端末を操作する時間を削減する"
+  ],
+  "correctAnswers": [
+   3
+  ],
+  "explanation": "正解は、ユーザーが端末を操作する時間を削減する効果です。WinActorが代理で操作を行うため、人が端末に向かう時間が減ります。サーバやネットワークの性能向上、PC台数の削減はWinActorの効果として挙げられていません。",
+  "wrongChoiceExplanations": {
+   "0": "サーバ側の処理速度は、WinActorでは変わりません。WinActorは端末の操作を自動化するツールです。",
+   "1": "WinActorはPC台数を減らすものではなく、既存のWindows PC上の操作を代理で行います。",
+   "2": "通信速度の向上はWinActorの役割ではなく、ネットワーク環境の性能に依存します。"
+  },
+  "domain": "overview",
+  "service": "RPAとWinActorの基礎",
+  "difficulty": 1,
+  "tags": [
+   "基礎",
+   "RPAとWinActorの基礎"
+  ],
+  "source": "操作マニュアル p.13 (WinActor とは)",
+  "beginnerNote": "「人」が「端末を操作する」ことがどう変わるかを考えます。"
+ },
+ {
+  "id": "b-ov1-14",
+  "question": "WinActorにおける「シナリオ」の説明として最も適切なものはどれか。",
+  "choices": [
+   "多数のロボットを一元管理する上位の製品",
+   "操作手順を記録して作る、自動化の手順書",
+   "RPAの自動化レベルを示す3段階の区分",
+   "Excelのマクロ（VBA）で書かれたプログラム"
+  ],
+  "correctAnswers": [
+   1
+  ],
+  "explanation": "正解は、操作手順を記録して作る自動化の手順書です。WinActorはアプリの操作手順をシナリオとして記録し、これに沿って自動操作を行います。上位製品のWinDirectorや自動化レベルのクラス分けとは別の話です。",
+  "wrongChoiceExplanations": {
+   "0": "多数のロボットを一元管理する上位製品は、WinDirectorです。",
+   "2": "3段階の区分は、クラス1（RPA）・クラス2（EPA）・クラス3（CA）の自動化レベルです。",
+   "3": "VBAで書かれたプログラムはExcelマクロであり、WinActorのシナリオとは別物です。"
+  },
+  "domain": "overview",
+  "service": "RPAとWinActorの基礎",
+  "difficulty": 1,
+  "tags": [
+   "基礎",
+   "RPAとWinActorの基礎"
+  ],
+  "source": "操作マニュアル p.13 (WinActor とは)",
+  "beginnerNote": "WinActorが「記録」し、それに沿って「実行」するものは何かを思い出します。"
+ },
+ {
+  "id": "b-ov1-15",
+  "question": "RPAの自動化レベルのうち、高度な自律化を目指す最上位の段階はどれか。",
+  "choices": [
+   "クラス3（CA）",
+   "クラス1（RPA）",
+   "クラス2（EPA）",
+   "マクロ（VBA）"
+  ],
+  "correctAnswers": [
+   0
+  ],
+  "explanation": "正解はクラス3（CA）です。CAは自動化レベルの最上位で、高度な自律化を目指す段階です。定型業務を扱うクラス1（RPA）、一部にAIを組み合わせるクラス2（EPA）とは、扱える業務の範囲が異なります。",
+  "wrongChoiceExplanations": {
+   "1": "クラス1（RPA）は、定型業務のみを自動化する最も基本的な段階です。",
+   "2": "クラス2（EPA）は、一部にAIを組み合わせて非定型業務も扱う中間の段階です。",
+   "3": "マクロ（VBA）はOffice内の自動化の仕組みで、RPAの自動化レベルではありません。"
+  },
+  "domain": "overview",
+  "service": "RPAとWinActorの基礎",
+  "difficulty": 1,
+  "tags": [
+   "基礎",
+   "RPAとWinActorの基礎"
+  ],
+  "source": "レッスン本文（RPAとWinActorの基礎）",
+  "beginnerNote": "クラスの数字が最も大きい段階です。"
+ }
+]

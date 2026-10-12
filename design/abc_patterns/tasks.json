@@ -1,0 +1,184 @@
+[
+ {
+  "lesson": "l-ov1",
+  "basic": 5,
+  "confirm": 0,
+  "basic_ids": [
+   "b-ov1-11",
+   "b-ov1-12",
+   "b-ov1-13",
+   "b-ov1-14",
+   "b-ov1-15"
+  ],
+  "confirm_ids": []
+ },
+ {
+  "lesson": "l-ov2",
+  "basic": 5,
+  "confirm": 0,
+  "basic_ids": [
+   "b-ov2-11",
+   "b-ov2-12",
+   "b-ov2-13",
+   "b-ov2-14",
+   "b-ov2-15"
+  ],
+  "confirm_ids": []
+ },
+ {
+  "lesson": "l-ov3",
+  "basic": 5,
+  "confirm": 0,
+  "basic_ids": [
+   "b-ov3-11",
+   "b-ov3-12",
+   "b-ov3-13",
+   "b-ov3-14",
+   "b-ov3-15"
+  ],
+  "confirm_ids": []
+ },
+ {
+  "lesson": "l-ov4",
+  "basic": 5,
+  "confirm": 0,
+  "basic_ids": [
+   "b-ov4-11",
+   "b-ov4-12",
+   "b-ov4-13",
+   "b-ov4-14",
+   "b-ov4-15"
+  ],
+  "confirm_ids": []
+ },
+ {
+  "lesson": "l-ft1",
+  "basic": 5,
+  "confirm": 0,
+  "basic_ids": [
+   "b-ft1-11",
+   "b-ft1-12",
+   "b-ft1-13",
+   "b-ft1-14",
+   "b-ft1-15"
+  ],
+  "confirm_ids": []
+ },
+ {
+  "lesson": "l-ft2",
+  "basic": 5,
+  "confirm": 0,
+  "basic_ids": [
+   "b-ft2-11",
+   "b-ft2-12",
+   "b-ft2-13",
+   "b-ft2-14",
+   "b-ft2-15"
+  ],
+  "confirm_ids": []
+ },
+ {
+  "lesson": "l-ft3",
+  "basic": 5,
+  "confirm": 0,
+  "basic_ids": [
+   "b-ft3-11",
+   "b-ft3-12",
+   "b-ft3-13",
+   "b-ft3-14",
+   "b-ft3-15"
+  ],
+  "confirm_ids": []
+ },
+ {
+  "lesson": "l-ft4",
+  "basic": 5,
+  "confirm": 0,
+  "basic_ids": [
+   "b-ft4-11",
+   "b-ft4-12",
+   "b-ft4-13",
+   "b-ft4-14",
+   "b-ft4-15"
+  ],
+  "confirm_ids": []
+ },
+ {
+  "lesson": "l-ft5",
+  "basic": 5,
+  "confirm": 0,
+  "basic_ids": [
+   "b-ft5-11",
+   "b-ft5-12",
+   "b-ft5-13",
+   "b-ft5-14",
+   "b-ft5-15"
+  ],
+  "confirm_ids": []
+ },
+ {
+  "lesson": "l-sc1",
+  "basic": 5,
+  "confirm": 0,
+  "basic_ids": [
+   "b-sc1-11",
+   "b-sc1-12",
+   "b-sc1-13",
+   "b-sc1-14",
+   "b-sc1-15"
+  ],
+  "confirm_ids": []
+ },
+ {
+  "lesson": "l-sc2",
+  "basic": 5,
+  "confirm": 0,
+  "basic_ids": [
+   "b-sc2-11",
+   "b-sc2-12",
+   "b-sc2-13",
+   "b-sc2-14",
+   "b-sc2-15"
+  ],
+  "confirm_ids": []
+ },
+ {
+  "lesson": "l-sc3",
+  "basic": 5,
+  "confirm": 0,
+  "basic_ids": [
+   "b-sc3-11",
+   "b-sc3-12",
+   "b-sc3-13",
+   "b-sc3-14",
+   "b-sc3-15"
+  ],
+  "confirm_ids": []
+ },
+ {
+  "lesson": "l-sc4",
+  "basic": 5,
+  "confirm": 0,
+  "basic_ids": [
+   "b-sc4-11",
+   "b-sc4-12",
+   "b-sc4-13",
+   "b-sc4-14",
+   "b-sc4-15"
+  ],
+  "confirm_ids": []
+ },
+ {
+  "lesson": "l-sc5",
+  "basic": 5,
+  "confirm": 0,
+  "basic_ids": [
+   "b-sc5-11",
+   "b-sc5-12",
+   "b-sc5-13",
+   "b-sc5-14",
+   "b-sc5-15"
+  ],
+  "confirm_ids": []
+ }
+]
