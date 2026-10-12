@@ -425,7 +425,7 @@
    0
   ],
   "lessonTheme": "エディションとライセンス",
-  "explanation": "WinActorのソフトウェア環境条件では、実行環境としてMicrosoft .NET Framework 4.8以上が必要とされています。対応OSはWindows 10 Pro／Windows 11 Pro／Windows Server 2016・2019・2022です。",
+  "explanation": "WinActorのソフトウェア環境条件では、実行環境としてMicrosoft .NET Framework 4.8以上が必要とされています。対応OSはWindows 10 Pro／Windows 11 Pro／Windows Server 2016・2019・2022・2025です。",
   "wrongChoiceExplanations": {
    "1": "JREはJavaアプリを動かすための環境で、WinActorの実行環境条件ではありません。",
    "2": "Python実行ノードを使う場合を除き、Python自体はWinActorの動作要件ではありません。",
