@@ -198,9 +198,11 @@ final class LogicTests: XCTestCase {
         let twoDaysAgo = cal.date(byAdding: .day, value: -2, to: today)!
         var r = DailyStudyRecord(day: twoDaysAgo); r.questions = 4; r.correct = 3
         let url = try StudyRecordCSV.write(records: [twoDaysAgo: r])
-        let text = try String(contentsOf: url, encoding: .utf8)
+        let data = try Data(contentsOf: url)
+        XCTAssertEqual(Array(data.prefix(3)), [0xEF, 0xBB, 0xBF])   // Excel用のBOM（文字列に読むと自動で除かれる）
+        let text = String(decoding: data.dropFirst(3), as: UTF8.self)
         let lines = text.components(separatedBy: "\r\n").filter { !$0.isEmpty }
-        XCTAssertTrue(lines[0].hasPrefix("\u{FEFF}日付,"))
+        XCTAssertTrue(lines[0].hasPrefix("日付,"))
         XCTAssertEqual(lines.count, 4)               // 見出し＋3日分（学習しなかった日も入る）
         XCTAssertTrue(lines[1].contains(",4,3,75,"))  // 4問中3問正解＝75%
     }
